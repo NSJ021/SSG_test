@@ -1259,7 +1259,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .bg-grea{
-    background: #e6e6e6;
+    background: #68b411;
 }
 
 .bg-grea-2{
@@ -1268,7 +1268,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .bg-grea-3{
-    background: #f9f9f8;
+    background: #68b411;
 }
 
 .search-area-inner {
@@ -5244,6 +5244,7 @@ footer {
 }
 
 .content-area-5 {
+    background-color: #33CCFF;
     padding: 100px 0;
 }
 
@@ -6068,7 +6069,7 @@ footer {
 
 /** Sub Banner start **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(../img/car-1.jpg) top left repeat;
+    background: url(../img/logos/logo.jpg) top left repeat;
     background-size: cover;
     height: 360px;
     background-position: center center;
@@ -8269,6 +8270,7 @@ table {
     }
 
     .content-area-5 {
+        background-color: #00a875;
         padding: 80px 0;
     }
 
@@ -9539,6 +9541,7 @@ table {
     }
 
     .content-area-5 {
+        background-color: #00a875;
         padding: 60px 0;
     }
 
