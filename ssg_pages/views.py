@@ -1,10 +1,17 @@
 from django.shortcuts import render
+from .models import Team
 
 # Create your views here.
 
 
 def home(request):
-    return render(request, 'ssg_pages/home.html')
+    team = Team.objects.all()
+    
+    return render(request, 'ssg_pages/home.html', 
+        {
+            'team': team,  
+        },
+    )
 
 def games(request):
     return render(request, 'ssg_pages/games.html')
