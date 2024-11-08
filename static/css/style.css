@@ -17,20 +17,20 @@ p {
     font-size: 15px;
     line-height: 26px;
     font-weight: 500;
-    color: #535353;
+    color: #000000;
 }
 
 strong {
-    color: #535353;
+    color: #b5571d;
 }
 
 span {
-    color: #535353;
+    color: #b5571d;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Roboto', sans-serif;
-    color: #383737;
+    color: #000000;
     font-weight: 400;
 }
 
@@ -38,7 +38,7 @@ ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    color: #535353;
+    color: #000000;
 }
 
 .btn.focus, .btn:focus {
@@ -55,21 +55,16 @@ ul {
     color: #3b589e !important;
 }
 
-.twitter:hover {
+.kickstarter:hover {
     color: #56d7fe !important;
 }
 
-.google:hover {
+.itchio:hover {
     color: #dc4e41 !important;
 }
 
-.rss:hover {
-    color: #e78733 !important;
-}
 
-.linkedin:hover {
-    color: #1c82ca !important;
-}
+
 
 /** Social media bg**/
 .facebook-bg {
@@ -77,28 +72,13 @@ ul {
     color: #fff;
 }
 
-.twitter-bg {
+.kickstarter-bg {
     background: #33CCFF;
     color: #fff;
 }
 
-.google-bg {
+.itchio-bg {
     background: #db4437;
-    color: #fff;
-}
-
-.linkedin-bg {
-    background: #0177b5;
-    color: #fff;
-}
-
-.rss-bg{
-    background: #e78733;
-    color: #fff;
-}
-
-.pinterest-bg {
-    background: #bd081c;
     color: #fff;
 }
 
@@ -107,28 +87,13 @@ ul {
     color: #fff;
 }
 
-.twitter-bg:hover {
+.kickstarter-bg:hover {
     background: #56d7fe;
     color: #fff;
 }
 
-.linkedin-bg:hover {
-    background: #1c82ca;
-    color: #fff;
-}
-
-.google-bg:hover {
+.itchio-bg:hover {
     background: #dc4e41;
-    color: #fff;
-}
-
-.rss-bg:hover {
-    background: #e78701;
-    color: #fff;
-}
-
-.pinterest-bg:hover {
-    background: #a30618;
     color: #fff;
 }
 
@@ -553,6 +518,7 @@ input[type=checkbox]:checked + label:before {
     border-color: #e0e0e0;
     -webkit-box-shadow: none;
     box-shadow: none;
+    
 }
 
 .btn.active, .btn:active {
@@ -721,10 +687,6 @@ input[type=checkbox]:checked + label:before {
 .main-header .company-logo-2 {
     padding: 15px 0;
     float: left;
-}
-
-.header-with-top{
-    background: rgba(12, 12, 12, 0.18);
 }
 
 .main-header .pad-0{
@@ -1259,7 +1221,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .bg-grea{
-    background: #68b411;
+    background: #3bc85a;
 }
 
 .bg-grea-2{
@@ -1268,7 +1230,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .bg-grea-3{
-    background: #68b411;
+    background: #3bc85a;
 }
 
 .search-area-inner {
@@ -2694,10 +2656,10 @@ input[type=checkbox]:checked + label:before {
     width: 200px;
     font-size: 12px;
     margin: 0;
-    color: #fff;
+    color: #ffffff;
     font-weight: 500;
     line-height: 28px;
-    background: #292929;
+    background: #ed8816;
     text-transform: uppercase;
 }
 
@@ -3821,7 +3783,7 @@ input[type=checkbox]:checked + label:before {
 
 /** Footer start **/
 footer {
-    background: #222e56;
+    background: #06640c;
 }
 
 .footer ul li a{
@@ -3880,7 +3842,7 @@ footer {
     margin-bottom: 15px;
     font-size: 15px;
     font-weight: 500;
-    color: #b3b3b3;
+    color: #ffffff;
     position: relative;
     padding-left: 25px;
 }
@@ -3922,17 +3884,14 @@ footer {
     background: #4867aa!important;
 }
 
-.footer .twitter-bg:hover {
+.footer .kickstarter-bg:hover {
     background: #56d7fe!important;
 }
 
-.footer .google-bg:hover {
+.footer .itchio-bg:hover {
     background: #dc4e41!important;
 }
 
-.footer .linkedin-bg:hover {
-    background: #0177b5!important;
-}
 
 .footer .f-logo{
     margin-bottom: 0px;
@@ -3947,13 +3906,13 @@ footer {
     padding: 20px 0;
     text-align: center;
     margin-bottom: 0;
-    background: #202c54;
+    background: #06640c;
     color: #fff;
 }
 
 .sub-footer p{
     margin-bottom: 0;
-    color: #b3b3b3;
+    color: #ffffff;
     text-align: left;
     line-height: 44px;
 }
@@ -4452,8 +4411,7 @@ footer {
     padding: 100px 0 70px;
 }
 .featured-car.content-area{
-    background: rgba(0, 0, 0, 0.04) url(../img/bg-img-6.jpg) top left repeat;
-    background-size: cover;
+    background: #ed8816;
     width: 100%;
     padding: 100px 0 70px;
 }
@@ -5054,7 +5012,7 @@ footer {
 
 .contact-2 .contact-info i {
     font-size: 24px;
-    color: #212529;
+    color: #000000;
 }
 
 .contact-2 .contact-info p {
@@ -5066,7 +5024,7 @@ footer {
     width: 100%;
     padding: 10px 20px;
     font-size: 16px;
-    background: transparent;
+    background: #ffffff;
     outline: 0;
     height: 45px;
     border-radius: 3px;
@@ -5075,8 +5033,8 @@ footer {
 }
 
 .contact-2 .form-control:focus {
-    color: #495057;
-    background-color: transparent;
+    color: #000000;
+    background-color: #ffffff;
     border: 1px solid #dbdbdb;
     outline: 0;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .06);
@@ -5107,11 +5065,12 @@ footer {
     padding: 40px;
     border-radius: 5px;
     margin-left: 50px;
-    background: #fff;
+    background: #3bc85a;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
 }
 
 .contact-2 .contact-info-2 .ci-box i {
+    color: #ffffff;
     width: 45px;
     line-height: 50px;
     margin-right: 5px;
@@ -5119,29 +5078,38 @@ footer {
 }
 
 .contact-2 .contact-info-2 .ci-box h5 {
+    color: #ffffff;
     font-weight: 500;
     font-size: 16px;
     margin: 0 0 5px;
 }
 
 .contact-2 .contact-info-2 .ci-box p {
+    color: #ffffff;
     font-size: 15px;
     font-weight: 400;
     margin-bottom: 0;
 }
 
 .contact-2 .contact-info-2 .ci-box {
+    color: #ffffff;
     margin: 0 0 30px 0;
     position: relative;
     width: 100%;
 }
 
 .contact-2 .ci-box .icon {
+    color: #ffffff;
     position: absolute;
 }
 
 .contact-2 .ci-box .detail {
+    color: #ffffff;
     margin-left: 50px;
+}
+
+.contact-2 .ci-box p a {
+    color: #ffffff;
 }
 
 /** Social media box **/
@@ -5244,7 +5212,7 @@ footer {
 }
 
 .content-area-5 {
-    background-color: #33CCFF;
+    background: #7adf7d;
     padding: 100px 0;
 }
 
@@ -5774,17 +5742,17 @@ footer {
     color: #fff;
 }
 
-.contact-section .twitter-bg {
+.contact-section .kickstarter-bg {
     background: #33CCFF;
     color: #fff;
 }
 
-.contact-section .google-bg {
+.contact-section .itchio-bg {
     background: #db4437;
     color: #fff;
 }
 
-.contact-section .google-i {
+.contact-section .itchio-i {
     background: #c3291c;
 }
 
@@ -5792,7 +5760,7 @@ footer {
     background: #3b589e;
 }
 
-.contact-section .twitter-i {
+.contact-section .kickstarter-i {
     background: #0cace0;
 }
 
@@ -6069,9 +6037,9 @@ footer {
 
 /** Sub Banner start **/
 .sub-banner {
-    background: url(../img/logos/logo.jpg) top left repeat;
+    background: url(../img/logos/logo.jpg);
     background-size: cover;
-    height: 65%;
+    height: 70%;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
@@ -8103,7 +8071,6 @@ table {
 
     .sticky-header {
         position: fixed;
-        top: 10px;
         z-index: 9999;
         width: 100%;
         background-color: #ffffff;
@@ -8207,7 +8174,7 @@ table {
     }
 
     .content-area-5 {
-        background-color: #00a875;
+        background: #7adf7d;
         padding: 80px 0;
     }
 
@@ -9244,10 +9211,6 @@ table {
         margin-bottom: 30px;
     }
 
-    .main-header {
-        box-shadow: 0 0 8px 0 rgba(0,0,0,.12);
-    }
-
     .search-area-2 .form-group {
         margin-bottom: 10px;
     }
@@ -9463,7 +9426,7 @@ table {
     }
 
     .content-area-5 {
-        background-color: #00a875;
+        background: #7adf7d;
         padding: 60px 0;
     }
 
@@ -9658,7 +9621,7 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 }
 
 .form-control{
-        color: #495057 !important;
+        color: #000000 !important;
 }
 .contact-dealer.modal-header{
     background: #f0151f !important;
@@ -9692,12 +9655,6 @@ a.nav-link.active{
 .tabbing-box .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
   color: #fff !important;
 }
-
-
-
-
-
-
 
 
 

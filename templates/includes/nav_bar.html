@@ -12,34 +12,74 @@
             </button>
             <div class="navbar-collapse collapse w-100" id="navbar">
                 <ul class="navbar-nav ml-auto">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="{% url 'home' %}" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            
-                        </a>
-                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'games' %}">
+                        <a 
+                        {% if '/' == request.path %}
+                        class="nav-link active"
+                        {% else %} 
+                        class="nav-link"
+                        {% endif %}
+                        href="{% url 'home' %}">
+                            Home
+                        </a>
+                    </li>
+                    <li class='nav-item'>
+                        <a                        
+                        {% if '/games/' == request.path %}
+                        class="nav-link active"
+                        {% else %} 
+                        class="nav-link"
+                        {% endif %}
+                        class="nav-link" href="{% url 'games' %}">
                             Games
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">
+                    <li class='nav-item'>
+                        <a                        
+                        {% if '/about' == request.path %}
+                        class="nav-link active"
+                        {% else %} 
+                        class="nav-link"
+                        {% endif %} 
+                        class="nav-link" href="{% url 'about' %}">
                             About
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'blog' %}">
+                    <li class='nav-item'>
+                        <a                        
+                        {% if '/blog' == request.path %}
+                        class="nav-link active"
+                        {% else %} 
+                        class="nav-link"
+                        {% endif %}
+                        class="nav-link" href="{% url 'blog' %}">
                             Blog
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                    <li class='nav-item'>
+                        <a                        
+                        {% if '/contact' == request.path %}
+                        class="nav-link active"
+                        {% else %} 
+                        class="nav-link"
+                        {% endif %}
+                        class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="login.html" class="sign-in nav-link"><i class="fa fa-sign-in"></i> Login</a>
+                    <li class='nav-item'>
+                        <a                        
+                        {% if '/login' == request.path %}
+                        class="nav-link active"
+                        {% else %} 
+                        class="nav-link"
+                        {% endif %} href="login.html" class="sign-in nav-link"><i class="fa fa-sign-in"></i> Login</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="signup.html" class="sign-in nav-link"><i class="fa fa-user"></i> Register</a>
+                    <li class='nav-item'>
+                        <a                        
+                        {% if '/signup' == request.path %}
+                        class="nav-link active"
+                        {% else %} 
+                        class="nav-link"
+                        {% endif %} href="signup.html" class="sign-in nav-link"><i class="fa fa-user"></i> Register</a>
                     </li>
                 </ul>
             </div>
