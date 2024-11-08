@@ -645,7 +645,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .top-header.bg-active{
-    background: #222e56;
+    background: #fff;
 }
 
 .top-header .list-inline {
@@ -684,16 +684,16 @@ input[type=checkbox]:checked + label:before {
 
 .top-header .sign-in, .top-header .sign-in:hover {
     line-height: 36px;
-    color: #ececec;
+    color: #f02727;
     font-size: 13px;
-    background: #2c3b6d;
+    background: #fff;
     padding: 4px 10px;
     border-radius: 3px;
     text-transform: uppercase;
 }
 
 .top-header ul li a {
-    color: #fff;
+    color: #000;
 }
 
 .top-header .sign-in, .top-header .sign-in:hover
@@ -701,13 +701,13 @@ input[type=checkbox]:checked + label:before {
 
 .th-2 .sign-in, .top-header .sign-in:hover {
     line-height: 50px;
-    color: #ececec;
+    color: #000;
     font-size: 13px;
-    background: #2c3b6d;
+    background: #fff;
     padding: 4px 10px;
     border-radius: 3px;
     text-transform: uppercase;
-    background: rgba(0,0,0,0.15);
+    /* background: rgba(0,0,0,0.15); */
     -webkit-box-shadow: 0px 0px 0px 2px rgba(255,255,255,0.2);
     box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.2);
 }
@@ -759,13 +759,13 @@ input[type=checkbox]:checked + label:before {
 }
 
 .main-header .navbar-expand-lg .navbar-nav .nav-link {
-    color: #636060;
+    color: #000000;
 }
 
 .main-header .navbar-expand-lg .navbar-nav .nav-link {
     padding: 32.5px 15px;
     line-height: 20px;
-    color: #515151;
+    color: #000000;
     opacity: 1;
     font-size: 15px;
     font-weight: 400;
@@ -1259,7 +1259,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .bg-grea{
-    background: #e6e6e6;
+    background: #68b411;
 }
 
 .bg-grea-2{
@@ -1268,7 +1268,7 @@ input[type=checkbox]:checked + label:before {
 }
 
 .bg-grea-3{
-    background: #f9f9f8;
+    background: #68b411;
 }
 
 .search-area-inner {
@@ -5244,6 +5244,7 @@ footer {
 }
 
 .content-area-5 {
+    background-color: #33CCFF;
     padding: 100px 0;
 }
 
@@ -6068,7 +6069,7 @@ footer {
 
 /** Sub Banner start **/
 .sub-banner {
-    background: rgba(0, 0, 0, 0.04) url(../img/car-1.jpg) top left repeat;
+    background: url(../img/logos/logo.jpg) top left repeat;
     background-size: cover;
     height: 360px;
     background-position: center center;
@@ -7179,13 +7180,13 @@ table {
 }
 
 .tabbing-box .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #fff;
+    color: #000;
     border-radius: 0;
 }
 
 .tabbing-box .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover {
     border-radius: 0;
-    color: #fff;
+    color: #000;
 }
 
 .tabbing-box .nav-tabs .nav-link {
@@ -8108,31 +8109,14 @@ table {
 }
 
 @media all and (min-width: 992px) {
-    .banner img {
-        /*animation: bgburnsEast 25s linear infinite alternate;
-        -webkit-animation: bgburnsEast 25s linear infinite alternate;*/
-    }
 
-    .dropdown:hover > .dropdown-menu {
-        display: block;
-        max-width: 700px;
-        margin: auto;
-    }
-
-    .dropdown .dropdown-item:hover > .dropdown-menu {
-        display: block;
-    }
-
-    .dropdown-submenu:hover > .dropdown-menu {
-        display: block;
-    }
 
     .sticky-header .nav-link::after {
         display: none !important;
     }
 
     .sticky-header .navbar-expand-lg .navbar-nav .nav-link {
-        color: #fff;
+        color: #000000;
         opacity: 0.9;
     }
 
@@ -8142,7 +8126,7 @@ table {
     }
 
     .sh-3 .navbar-expand-lg .navbar-nav .nav-link{
-        color: #fff;
+        color: #ffffff;
         opacity: 1;
     }
 
@@ -8168,7 +8152,7 @@ table {
         top: 49px;
         z-index: 9999;
         width: 100%;
-        background: rgba(12,12,12,0.1);
+        background-color: #ffffff;
     }
 
     .mh-4{
@@ -8176,12 +8160,12 @@ table {
     }
 
     .sh-2{
-        background: #fff;
+        background-color: #ffffff;
         top: 50px;
     }
 
     .header-shrink {
-        background: #fff;
+        background-color: #ffffff;
         -webkit-transition: 0.5s;
         -moz-transition: 0.5s;
         -ms-transition: 0.5s;
@@ -8192,7 +8176,7 @@ table {
     }
 
     .top-header-bg{
-        background: rgba(12,12,12,0.1);
+        background-color: #ffffff;
         position: fixed;
         top: 0;
         z-index: 999;
@@ -8269,6 +8253,7 @@ table {
     }
 
     .content-area-5 {
+        background-color: #00a875;
         padding: 80px 0;
     }
 
@@ -8972,7 +8957,7 @@ table {
     }
 
     .top-header-bg {
-        background: rgba(12, 12, 12, 0.18);
+        background: #fff;
         position: fixed;
         top: 0;
         z-index: 999;
@@ -9539,6 +9524,7 @@ table {
     }
 
     .content-area-5 {
+        background-color: #00a875;
         padding: 60px 0;
     }
 

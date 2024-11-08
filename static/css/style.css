@@ -8109,31 +8109,14 @@ table {
 }
 
 @media all and (min-width: 992px) {
-    .banner img {
-        /*animation: bgburnsEast 25s linear infinite alternate;
-        -webkit-animation: bgburnsEast 25s linear infinite alternate;*/
-    }
 
-    .dropdown:hover > .dropdown-menu {
-        display: block;
-        max-width: 700px;
-        margin: auto;
-    }
-
-    .dropdown .dropdown-item:hover > .dropdown-menu {
-        display: block;
-    }
-
-    .dropdown-submenu:hover > .dropdown-menu {
-        display: block;
-    }
 
     .sticky-header .nav-link::after {
         display: none !important;
     }
 
     .sticky-header .navbar-expand-lg .navbar-nav .nav-link {
-        color: #000;
+        color: #000000;
         opacity: 0.9;
     }
 
@@ -8143,7 +8126,7 @@ table {
     }
 
     .sh-3 .navbar-expand-lg .navbar-nav .nav-link{
-        color: #fff;
+        color: #ffffff;
         opacity: 1;
     }
 
@@ -8169,7 +8152,7 @@ table {
         top: 49px;
         z-index: 9999;
         width: 100%;
-        background: #fff;
+        background-color: #ffffff;
     }
 
     .mh-4{
@@ -8177,12 +8160,12 @@ table {
     }
 
     .sh-2{
-        background: #fff;
+        background-color: #ffffff;
         top: 50px;
     }
 
     .header-shrink {
-        background: #fff;
+        background-color: #ffffff;
         -webkit-transition: 0.5s;
         -moz-transition: 0.5s;
         -ms-transition: 0.5s;
@@ -8193,7 +8176,7 @@ table {
     }
 
     .top-header-bg{
-        background: #fff;
+        background-color: #ffffff;
         position: fixed;
         top: 0;
         z-index: 999;
