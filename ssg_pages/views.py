@@ -17,8 +17,14 @@ def games(request):
     return render(request, 'ssg_pages/games.html')
 
 def about(request):
-    return render(request, 'ssg_pages/about.html')
-
+    team = Team.objects.all()
+    
+    return render(request, 'ssg_pages/about.html', 
+        {
+            'team': team,  
+        },
+    )
+    
 def blog(request):
     return render(request, 'ssg_pages/blog.html')
 

@@ -6724,62 +6724,62 @@ footer {
     color: orange;
 }
 /** Car details sliders start **/
-.car-details-sliders .carousel-indicators {
+.games-details-sliders .carousel-indicators {
     margin-left: initial;
     margin-top: 0;
 }
 
-.car-details-sliders .carousel-indicators a {
+.games-details-sliders .carousel-indicators a {
     cursor: pointer;
 }
 
-.car-details-sliders .carousel-indicators > li {
+.games-details-sliders .carousel-indicators > li {
     height: initial;
     text-indent: initial;
     margin-right: 0;
     margin-left: 0;
 }
 
-.dd.car-details-sliders .carousel-indicators > li {
+.dd.games-details-sliders .carousel-indicators > li {
     width: initial;
     height: initial;
     text-indent: initial;
 }
 
-.car-details-sliders .list-inline {
+.games-details-sliders .list-inline {
     width: 100%;
     bottom: 10px;
     position: absolute;
 }
 
-.car-details-sliders .list-inline a{
+.games-details-sliders .list-inline a{
     margin-right: 0;
 }
 
-.car-properties .list-inline-item {
+.games-properties .list-inline-item {
     width: 80px;
     margin: 5px!important;
     border-radius: 5%;
 }
 
-.car-properties .list-inline-item a img {
+.games-properties .list-inline-item a img {
     width: 100%;
     border: none;
     border-radius: 5%;
     box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.82);
 }
 
-.car-details-sliders .carousel-indicators > li.active img {
+.games-details-sliders .carousel-indicators > li.active img {
     opacity: 0.7;
 }
 
-.car-details-sliders .right {
+.games-details-sliders .right {
     position: absolute;
     right: 15px;
     top: 45%;
 }
 
-.car-details-sliders .left {
+.games-details-sliders .left {
     left: 10px;
     top: 47%;
     width: 30px;
@@ -6794,12 +6794,12 @@ footer {
     border-radius: 5%;
 }
 
-.car-details-sliders .left i {
+.games-details-sliders .left i {
     font-size: 20px;
     color: #4d4d4d;
 }
 
-.car-details-sliders .right {
+.games-details-sliders .right {
     right: 10px;
     top: 47%;
     width: 30px;
@@ -6813,7 +6813,7 @@ footer {
     border-radius: 5%;
 }
 
-.car-details-sliders .right i {
+.games-details-sliders .right i {
     font-size: 20px;
     color: #4d4d4d;
 }
@@ -6822,7 +6822,7 @@ footer {
     margin-right: 1px;
 }
 
-.car-properties {
+.games-properties {
     width: 100%;
 }
 
@@ -6833,7 +6833,7 @@ footer {
     width: 100%;
 }
 
-.carousel-indicators-section .car-properties .list-inline-item {
+.carousel-indicators-section .games-properties .list-inline-item {
     width: 20%;
     margin: 0!important;
     border-radius: 0!important;
@@ -7036,7 +7036,7 @@ footer {
     color: orange;
 }
 
-.shop-info .car-properties .list-inline-item{
+.shop-info .games-properties .list-inline-item{
     width: 50px;
 }
 
@@ -7113,18 +7113,18 @@ table {
     height: 300px;
 }
 
-.about-car{
+.about-us{
     padding-right: 40px;
 }
 
-.about-car .best-used-car h3 {
+.about-us .about-us-section h3 {
     font-size: 25px;
     font-weight: 500;
     margin-bottom: 15px;
     text-transform: uppercase;
 }
 
-.about-car .best-used-car ul li {
+.about-us .about-us-section ul li {
     margin-bottom: 10px;
     font-size: 15px;
     padding-left: 26px;
@@ -7132,27 +7132,27 @@ table {
     font-weight: 500;
 }
 
-.about-car .best-used-car ul li i {
+.about-us .about-us-section ul li i {
     left: 0;
     position: absolute;
     top: 3px;
 }
 
-.about-car .carousel-inner img{
-    border-radius: 5px;
+.about-us .carousel-inner img{
+    border-radius: 25px;
 }
 
-.about-car .best-used-car{
+.about-us .about-us-section{
     padding-left: 20px;
 }
 
-.about-car .car-details-sliders .list-inline {
+.about-us .games-details-sliders .list-inline {
     width: 100%;
     bottom: 10px;
     position: absolute;
 }
 
-.about-car  .car-properties .list-inline-item {
+.about-us  .games-properties .list-inline-item {
     width: 60px;
     margin: 3px!important;
     border-radius: 5%;
@@ -8202,7 +8202,7 @@ table {
         padding-right: 15px;
     }
 
-    .best-used-car h3 {
+    .about-us-section h3 {
         font-size: 30px;
     }
 
@@ -8358,11 +8358,11 @@ table {
         padding: 5px 0;
     }
 
-    .about-car .best-used-car h3 {
+    .about-us .about-us-section h3 {
         font-size: 22px;
     }
 
-    .about-car .best-used-car{
+    .about-us .about-us-section{
         padding: 0;
         margin-top: 30px;
     }
@@ -8454,7 +8454,7 @@ table {
         margin-bottom: 30px;
     }
 
-    .best-used-car h3 {
+    .about-us-section h3 {
         font-size: 26px;
     }
 
@@ -9207,7 +9207,7 @@ table {
         display: none;
     }
 
-    .car-properties .list-inline-item {
+    .games-properties .list-inline-item {
         width: 45px;
         margin: 3px!important;
     }

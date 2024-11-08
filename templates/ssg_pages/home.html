@@ -88,7 +88,7 @@
         </div> -->
         <!-- Search box 3 end -->
          
-        <a class="carousel-control-prev none-580" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        {% comment %} <a class="carousel-control-prev none-580" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="slider-mover-left" aria-hidden="true">
                 <i class="fa fa-angle-left"></i>
             </span>
@@ -97,7 +97,7 @@
             <span class="slider-mover-right" aria-hidden="true">
                 <i class="fa fa-angle-right"></i>
             </span>
-        </a>
+        </a> {% endcomment %}
     </div>
 </div>
 <!-- Banner end -->
@@ -495,7 +495,7 @@
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
-            <div class="row slick-carousel" data-slick='{"slidesToShow": 1, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 2, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
                 {% for team in team %}
                 <div class="slick-slide-item">
                     <div class="team-1">
