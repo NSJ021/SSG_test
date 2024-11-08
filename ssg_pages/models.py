@@ -9,8 +9,8 @@ class Team(models.Model):
     Stores a single about me text section
     """
     
-    f_name = models.CharField(max_length=200)
-    l_name = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
     position = models.CharField(max_length=200)
     profile_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
