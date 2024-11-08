@@ -1,0 +1,1 @@
+web: gunicorn ssg_config.wsgi --log-file -
