@@ -6071,7 +6071,7 @@ footer {
 .sub-banner {
     background: url(../img/logos/logo.jpg) top left repeat;
     background-size: cover;
-    height: 360px;
+    height: 65%;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
@@ -6079,52 +6079,6 @@ footer {
     font-family: 'Roboto', sans-serif;
 }
 
-.sub-banner .breadcrumb-area {
-    letter-spacing: 1px;
-    position: absolute;
-    top: 55%;
-    right: 0;
-    opacity: 0.9;
-    left: 0;
-}
-
-.mb-7{
-    margin-bottom: 7px;
-}
-
-.sub-banner .breadcrumb-area h1 {
-    margin: 0 0 7px;
-    font-weight: 500;
-    color: #fff;
-    font-size: 30px;
-    text-transform: uppercase;
-}
-
-.sub-banner .breadcrumbs li {
-    display: inline-block;
-    list-style: none;
-    font-size: 16px;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-}
-
-.sub-banner .breadcrumbs li a{
-    color: #fff;
-}
-
-.sub-banner .breadcrumbs .active {
-    margin-left: 3px;
-    color: #fff;
-}
-
-.sub-banner .breadcrumbs .active:before {
-    margin-right: 7px;
-    content: "/";
-    padding: 0 3px;
-    color: #fff;
-    font: normal normal normal 16px/1 FontAwesome;
-}
 
 .blog-social-list {
     float: right;
@@ -8149,7 +8103,7 @@ table {
 
     .sticky-header {
         position: fixed;
-        top: 49px;
+        top: 10px;
         z-index: 9999;
         width: 100%;
         background-color: #ffffff;
@@ -8329,10 +8283,6 @@ table {
         padding-top: 100px;
     }
 
-    .banner .w-100 {
-        width: auto!important;
-    }
-
     .testimonial-3 .testimonial-info{
         max-width: 500px;
         text-align: center;
@@ -8371,9 +8321,9 @@ table {
         padding: 80px 0 50px;
     }
 
-    .top-header{
+    /* .top-header{
         display: none;
-    }
+    } */
 
     .sticky-header {
         top: 0;
@@ -8943,7 +8893,7 @@ table {
     }
 
     .sub-banner {
-        height: 330px;
+        height: 60%;
     }
 
     .sticky-header {
@@ -8986,15 +8936,11 @@ table {
         padding: 25px 35px 25px 35px;
     }
 
-    .sub-banner {
-        background-position: inherit;
-        background-repeat: inherit;
-    }
 }
 
 @media (max-width: 768px) {
     .sub-banner {
-        height: 300px;
+        height: 50%;
     }
 
     .shop-info h3 {
@@ -9031,10 +8977,6 @@ table {
 
     .details-banner .text h1 {
         font-size: 30px;
-    }
-
-    .sub-banner .breadcrumb-area h1{
-        font-size: 27px;
     }
 
     .shop-table.cart td, .shop-table.cart th {
@@ -9126,9 +9068,6 @@ table {
         text-align: center;
     }
 
-    .sub-banner .breadcrumbs li {
-        font-size: 15px;
-    }
 
     .counters-2 {
         padding: 60px 0 30px;
