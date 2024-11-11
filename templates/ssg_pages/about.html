@@ -1,15 +1,9 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 
 {% load static %}
-<!-- Sub banner start -->
-<div class="sub-banner">
-    <div class="container breadcrumb-area">
-    </div>
-</div>
-<!-- Sub Banner end -->
+
 
 <!-- Service center strat -->
 <div class="about-us content-area-5">
@@ -23,13 +17,13 @@
                     <!-- main slider carousel items -->
                     <div class="carousel-inner">
                         <div class="active item carousel-item" data-slide-number="0">
-                            <img src="{% static 'img/feed_breed_title_card.jpg' %}" class="img-fluid" alt="slider-car">
+                            <img src="{% static 'img/feedandbreed/feed_breed_title_card.jpg' %}" class="img-fluid" alt="slider-car">
                         </div>
                         <div class="item carousel-item" data-slide-number="1">
-                            <img src="{% static 'img/feed_breed_rabbit_card.jpg' %}" class="img-fluid" alt="slider-car">
+                            <img src="{% static 'img/feedandbreed/feed_breed_rabbit_card.jpg' %}" class="img-fluid" alt="slider-car">
                         </div>
                         <div class="item carousel-item" data-slide-number="2">
-                            <img src="{% static 'img/feed_breed_fox_card.jpg' %}" class="img-fluid" alt="slider-car">
+                            <img src="{% static 'img/feedandbreed/feed_breed_fox_card.jpg' %}" class="img-fluid" alt="slider-car">
                         </div>
                     </div>
                     <!-- main slider carousel nav controls -->
@@ -37,19 +31,19 @@
                         <li class="list-inline-item active">
                             <a id="carousel-selector-0" class="selected" data-slide-to="0"
                                 data-target="#gamesDetailsSlider">
-                                <img src="{% static 'img/feed_breed_title_card.jpg' %}" class="img-fluid"
+                                <img src="{% static 'img/feedandbreed/feed_breed_title_card.jpg' %}" class="img-fluid"
                                     alt="small-car">
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a id="carousel-selector-1" data-slide-to="1" data-target="#gamesDetailsSlider">
-                                <img src="{% static 'img/feed_breed_rabbit_card.jpg' %}" class="img-fluid"
+                                <img src="{% static 'img/feedandbreed/feed_breed_rabbit_card.jpg' %}" class="img-fluid"
                                     alt="small-car">
                             </a>
                         </li>
                         <li class="list-inline-item">
                             <a id="carousel-selector-2" data-slide-to="2" data-target="#gamesDetailsSlider">
-                                <img src="{% static 'img/feed_breed_fox_card.jpg' %}" class="img-fluid" alt="small-car">
+                                <img src="{% static 'img/feedandbreed/feed_breed_fox_card.jpg' %}" class="img-fluid" alt="small-car">
                             </a>
                         </li>
                     </ul>
@@ -88,7 +82,7 @@
                         <div class="photo">
                             <a href="#">      
                                 {% if "placeholder" in team.profile_image.url %}
-                                <img src="{% static 'img/avatar/avatar-12.jpg' %}" class="img-fluid"  alt="placeholder image">
+                                <img src="{% static 'img/logos/logo.jpg' %}" class="img-fluid"  alt="placeholder image">
                                 {% else %}
                                 <img src="{{ team.profile_image.url }}" class=" img-fluid" alt="{{ team.position }}">
                                 {% endif %}

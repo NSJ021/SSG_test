@@ -4411,7 +4411,7 @@ footer {
     padding: 100px 0 70px;
 }
 .featured-car.content-area{
-    background: #ed8816;
+    background: #F2C849;
     width: 100%;
     padding: 100px 0 70px;
 }
@@ -5070,7 +5070,7 @@ footer {
 }
 
 .contact-2 .contact-info-2 .ci-box i {
-    color: #ffffff;
+    color: #000000;
     width: 45px;
     line-height: 50px;
     margin-right: 5px;
@@ -5078,38 +5078,38 @@ footer {
 }
 
 .contact-2 .contact-info-2 .ci-box h5 {
-    color: #ffffff;
+    color: #000000;
     font-weight: 500;
     font-size: 16px;
     margin: 0 0 5px;
 }
 
 .contact-2 .contact-info-2 .ci-box p {
-    color: #ffffff;
+    color: #000000;
     font-size: 15px;
     font-weight: 400;
     margin-bottom: 0;
 }
 
 .contact-2 .contact-info-2 .ci-box {
-    color: #ffffff;
+    color: #000000;
     margin: 0 0 30px 0;
     position: relative;
     width: 100%;
 }
 
 .contact-2 .ci-box .icon {
-    color: #ffffff;
+    color: #000000;
     position: absolute;
 }
 
 .contact-2 .ci-box .detail {
-    color: #ffffff;
+    color: #000000;
     margin-left: 50px;
 }
 
 .contact-2 .ci-box p a {
-    color: #ffffff;
+    color: #000000;
 }
 
 /** Social media box **/
