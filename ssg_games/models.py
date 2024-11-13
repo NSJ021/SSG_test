@@ -38,6 +38,10 @@ class Game(models.Model):
     description = models.TextField()
     is_featured = models.BooleanField(default=False)
     
+    
+        # Meta class and assigning string names to Post objects
+    class Meta:
+        ordering = ["-game_title"]
 
     def __str__(self):
         return f"{self.game_title} | Created by {self.creator}"
