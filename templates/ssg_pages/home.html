@@ -103,7 +103,7 @@
         </div>
         <!-- Slick slider area start -->
         <div class="slick-slider-area clearfix">
-            <div class="row slick-carousel" data-slick='{"slidesToShow": 3, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
+            <div class="row slick-carousel" data-slick='{"slidesToShow": 2, "responsive":[{"breakpoint": 1024,"settings":{"slidesToShow": 2}}, {"breakpoint": 768,"settings":{"slidesToShow": 1}}]}'>
                 {% for game in games %}
                 {% if game.is_featured == True %}
                 <div class="slick-slide-item">
@@ -154,14 +154,12 @@
                                 <a href="car-details.html">
                                     <i class="flaticon-pin"></i>{{ game.creator}}
                                 </a>
+                                <p>{{ game.created_on }}</p>
+                                <p>{{ game.game_brief | safe }}</p>
                             </div>
                             <ul class="facilities-list clearfix">
-                                <li>Petrol</li>
-                                <li>4,000 km</li>
-                                <li>Manual</li>
-                                <li>Sport</li>
-                                <li>white</li>
-                                <li>2020</li>
+                                <li>Players : {{ game.players }}</li>
+                                <li>Play Time : {{ game.game_time }} Minutes</li>
                             </ul>
                         </div>
                     </div>
@@ -193,6 +191,7 @@
         </div>
         <div class="row">
             {% for post in posts %}
+            {% if post.is_featured == True %}
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
@@ -217,6 +216,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
         </div>

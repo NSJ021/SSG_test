@@ -6,11 +6,10 @@ from cloudinary.models import CloudinaryField
 
 player_amount = (
     
-    ('1', '1+'),
-    ('2', '2+'),
-    ('3', '3+'),
-    ('4', '4+'),
-    
+    ('1+', '1+'),
+    ('2+', '2+'),
+    ('3+', '3+'),
+    ('4+', '4+'),  
 )
 
 game_length = (
@@ -18,7 +17,6 @@ game_length = (
     ('15-30', '15-30 minutes'),
     ('30-60', '30-60 minutes'),
     ('60+', '60+ minutes'),
-    
 )
 
 class Game(models.Model):
@@ -27,6 +25,7 @@ class Game(models.Model):
     """
     
     game_title = models.CharField(max_length=200)
+    # slug = models.SlugField(max_length=200, unique=True)
     creator = models.CharField(max_length=200)
     players = models.CharField(choices=player_amount, max_length=10)
     game_time = models.CharField(choices=game_length, max_length=50)
@@ -35,6 +34,7 @@ class Game(models.Model):
     game_image_3 = CloudinaryField('image', default='placeholder', blank=True)
     game_image_4 = CloudinaryField('image', default='placeholder', blank=True)
     game_image_5 = CloudinaryField('image', default='placeholder', blank=True)
+    game_brief = models.TextField()
     description = models.TextField()
     is_featured = models.BooleanField(default=False)
     

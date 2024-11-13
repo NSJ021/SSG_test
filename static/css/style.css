@@ -2674,6 +2674,7 @@ input[type=checkbox]:checked + label:before {
 
 .slick-slide-item {
     padding: 0 15px!important;
+    
 }
 
 .slick-arrow-buton {
@@ -2855,6 +2856,7 @@ input[type=checkbox]:checked + label:before {
     background: #fff;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    border-radius: 25px;
 }
 
 .car-box-3:hover{
@@ -9018,6 +9020,7 @@ table {
 
     .slick-slide-item{
         margin-bottom: 0;
+        
     }
 
     .slick-initialized .slick-slide {

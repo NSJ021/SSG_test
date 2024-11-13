@@ -29,7 +29,7 @@ class PostAdmin(SummernoteModelAdmin):
     thumbnail.short_description = 'Image'
     
     
-    list_display = ('title', 'thumbnail', 'slug','author', 'status', 'created_on',)
+    list_display = ('title', 'thumbnail', 'slug','author', 'status', 'created_on', 'is_featured')
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on', 'author',)
     prepopulated_fields = {'slug': ('title',)}
