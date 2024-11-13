@@ -23,7 +23,13 @@ def home(request):
     )
 
 def games(request):
-    return render(request, 'ssg_games/games.html')
+    game = Game.objects.all()
+    return render(request, 'ssg_games/games.html',
+        {
+            'games': game
+        },
+    )
+                  
 
 def about(request):
     team = Team.objects.all()

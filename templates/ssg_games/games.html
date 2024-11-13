@@ -1,8 +1,4 @@
-{% extends 'base.html' %} 
-
-{% block content %} 
-{% load static %}
-
+{% extends 'base.html' %} {% block content %} {% load static %}
 
 <!-- Featured car start -->
 <div class="featured-car content-area">
@@ -10,15 +6,17 @@
     <div class="row">
       <div class="col-12">
         <div class="main-title text-center">
-          <h2>Games<span>List</span></h2>
+          <h2>Games <span>List</span></h2>
           <p>Checkout our Game Listings !</p>
         </div>
       </div>
       <div class="col-12">
         <div class="row">
+          {% for game in games %}
           <div class="col-lg-6 col-md-6">
             <div class="car-box-3">
               <div class="car-thumbnail">
+                {% if "placeholder" in game.game_image_main.url %}
                 <a href="car-details.html" class="car-img">
                   <img
                     class="d-block w-100"
@@ -26,80 +24,52 @@
                     alt="car"
                   />
                 </a>
-                <div class="carbox-overlap-wrapper">
-                  <div class="overlap-box">
-                    <div class="overlap-btns-area">
-                      <div class="car-magnify-gallery">
-                        <a href="img/car/car-1.jpg" class="overlap-btn">
-                          <i class="fa fa-expand"></i>
-                          <img class="hidden" src="img/car/car-1.jpg" />
-                        </a>
-                        <a href="img/car/car-2.jpg" class="hidden">
-                          <img class="hidden" src="img/car/car-2.jpg" />
-                        </a>
-                        <a href="img/car/car-3.jpg" class="hidden">
-                          <img class="hidden" src="img/car/car-3.jpg" />
-                        </a>
-                        <a href="img/car/car-4.jpg" class="hidden">
-                          <img class="hidden" src="img/car/car-4.jpg" />
-                        </a>
-                        <a href="img/car/car-5.jpg" class="hidden">
-                          <img class="hidden" src="img/car/car-5.jpg" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="detail">
-                <h1 class="title">
-                  <a href="car-details.html">Lamborghini Huracán</a>
-                </h1>
-                <div class="location">
-                  <a href="car-details.html">
-                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
-                  </a>
-                </div>
-                <ul class="facilities-list clearfix">
-                  <li>Petrol</li>
-                  <li>4,000 km</li>
-                  <li>Manual</li>
-                  <li>Sport</li>
-                  <li>white</li>
-                  <li>2020</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6">
-            <div class="car-box-3">
-              <div class="car-thumbnail">
+                {% else %}
                 <a href="car-details.html" class="car-img">
                   <img
                     class="d-block w-100"
-                    src="img/car/car-6.jpg"
+                    src="{{ game.game_image_main.url }}"
                     alt="car"
                   />
                 </a>
+                {% endif %}
                 <div class="carbox-overlap-wrapper">
                   <div class="overlap-box">
                     <div class="overlap-btns-area">
                       <div class="car-magnify-gallery">
-                        <a href="img/car/car-6.jpg" class="overlap-btn">
+                        <a
+                          href="{{ game.game_image_main.url }}"
+                          class="overlap-btn"
+                        >
                           <i class="fa fa-expand"></i>
-                          <img class="hidden" src="img/car/car-6.jpg" />
+                          <img
+                            class="hidden"
+                            src="{{ game.game_image_main.url }}"
+                          />
                         </a>
-                        <a href="img/car/car-2.jpg" class="hidden">
-                          <img class="hidden" src="img/car/car-2.jpg" />
+                        <a href="{{ game.game_image_2.url }}" class="hidden">
+                          <img
+                            class="hidden"
+                            src="{{ game.game_image_2.url }}"
+                          />
                         </a>
-                        <a href="img/car/car-3.jpg" class="hidden">
-                          <img class="hidden" src="img/car/car-3.jpg" />
+                        <a href="{{ game.game_image_3.url }}" class="hidden">
+                          <img
+                            class="hidden"
+                            src="{{ game.game_image_3.url }}"
+                          />
                         </a>
-                        <a href="img/car/car-4.jpg" class="hidden">
-                          <img class="hidden" src="img/car/car-4.jpg" />
+                        <a href="{{ game.game_image_4.url }}" class="hidden">
+                          <img
+                            class="hidden"
+                            src="{{ game.game_image_4.url }}"
+                          />
                         </a>
-                        <a href="img/car/car-1.jpg" class="hidden">
-                          <img class="hidden" src="img/car/car-1.jpg" />
+                        <a href="{{ game.game_image_5.url }}" class="hidden">
+                          <img
+                            class="hidden"
+                            src="{{ game.game_image_5.url }}"
+                          />
                         </a>
                       </div>
                     </div>
@@ -108,31 +78,32 @@
               </div>
               <div class="detail">
                 <h1 class="title">
-                  <a href="car-details.html">Audi Q7 2018</a>
+                    <a href="car-details.html">{{ game.game_title }}</a>
                 </h1>
                 <div class="location">
-                  <a href="car-details.html">
-                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
-                  </a>
+                    <a href="car-details.html">
+                        <i class="flaticon-pin"></i>{{ game.creator}}
+                    </a>
+                    <p>{{ game.created_on }}</p>
+                    <p>{{ game.game_brief | safe }}</p>
                 </div>
                 <ul class="facilities-list clearfix">
-                  <li>Petrol</li>
-                  <li>4,000 km</li>
-                  <li>Manual</li>
-                  <li>Sport</li>
-                  <li>white</li>
-                  <li>2020</li>
+                    <li>Players : {{ game.players }}</li>
+                    <li>Play Time : {{ game.game_time }} Minutes</li>
                 </ul>
-              </div>
+            </div>
             </div>
           </div>
+          {% endfor %}
+
           <!-- Page navigation start -->
           <div class="pagination-box p-box-2 text-center">
             <nav aria-label="Page navigation example">
               <ul class="pagination">
                 <li class="page-item">
                   <a class="page-link" href="#">
-                    <i class="fa fa-angle-left"></i></a>
+                    <i class="fa fa-angle-left"></i
+                  ></a>
                 </li>
                 <li class="page-item">
                   <a class="page-link active" href="#">1</a>
@@ -141,7 +112,8 @@
                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                 <li class="page-item">
                   <a class="page-link" href="#">
-                    <i class="fa fa-angle-right"></i></a>
+                    <i class="fa fa-angle-right"></i
+                  ></a>
                 </li>
               </ul>
             </nav>
