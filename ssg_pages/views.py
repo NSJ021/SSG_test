@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Team
 from ssg_blog.models import Post, Comment
+from ssg_games.models import Game
 
 
 # Create your views here.
@@ -8,10 +9,16 @@ from ssg_blog.models import Post, Comment
 
 def home(request):
     team = Team.objects.all()
+    post = Post.objects.all()
+    comment = Comment.objects.all()
+    game = Game.objects.all()
     
     return render(request, 'ssg_pages/home.html', 
         {
-            'team': team,  
+            'team': team,
+            'posts': post,
+            'comments': comment,
+            'games': game 
         },
     )
 

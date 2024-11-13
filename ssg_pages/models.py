@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 
 class Team(models.Model):
     """
-    Stores a single about me text section
+    Stores a section about the team
     """
     
     first_name = models.CharField(max_length=200)

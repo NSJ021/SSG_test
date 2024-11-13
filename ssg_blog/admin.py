@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment
+from django.utils.html import format_html
+
 # Classes
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
@@ -20,7 +22,14 @@ class PostAdmin(SummernoteModelAdmin):
     ``summernote``
         allows summernote text editor on content field
     """
-    list_display = ('title', 'slug','author', 'status', 'created_on',)
+    
+    # Thumbnail function, to display user image in admin panel
+    def thumbnail(self, object):
+        return format_html('<img src="{}" width="50" style="border-radius:50px;" />'.format(object.featured_image.url))
+    thumbnail.short_description = 'Image'
+    
+    
+    list_display = ('title', 'thumbnail', 'slug','author', 'status', 'created_on',)
     search_fields = ['title', 'content']
     list_filter = ('status', 'created_on', 'author',)
     prepopulated_fields = {'slug': ('title',)}
