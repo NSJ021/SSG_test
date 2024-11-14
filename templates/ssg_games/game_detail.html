@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+{% block content %} 
+
+{% load static %}
+
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title">{{ game.game_title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="post-subtitle">{{ game.creator }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                {% if "placeholder" in game.game_image_main.url %}
+                <img src="{% static 'img/feedandbreed/feed_breed_fox_card.jpg' %}" class="scale" alt="placeholder image">
+                {% else %}
+                <img src="{{ game.game_image_main.url }}" class="scale" alt="{{ game.game_title }}">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col card mb-4  mt-3 left top">
+            <div class="card-body">
+                <!-- The post content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
+                <article class="card-text">
+                    {{ game.game_brief | safe }}
+
+                    {{ game.description | safe }}
+
+                    Players : {{ game.players }}
+
+                    Play Time : {{ game.game_time }}
+                </article>
+            </div>
+        </div>
+    </div>
+</div
+
+{% endblock %}

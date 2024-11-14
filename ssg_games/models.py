@@ -25,7 +25,7 @@ class Game(models.Model):
     """
     
     game_title = models.CharField(max_length=200)
-    # slug = models.SlugField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
     creator = models.CharField(max_length=200)
     players = models.CharField(choices=player_amount, max_length=10)
     game_time = models.CharField(choices=game_length, max_length=50)
@@ -38,10 +38,7 @@ class Game(models.Model):
     description = models.TextField()
     is_featured = models.BooleanField(default=False)
     
-    
-        # Meta class and assigning string names to Post objects
-    class Meta:
-        ordering = ["-game_title"]
+
 
     def __str__(self):
         return f"{self.game_title} | Created by {self.creator}"

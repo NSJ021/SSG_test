@@ -12,24 +12,24 @@
       </div>
       <div class="col-12">
         <div class="row">
-          {% for game in games %}
+          {% for game in object_list %}
           <div class="col-lg-6 col-md-6">
             <div class="car-box-3">
               <div class="car-thumbnail">
                 {% if "placeholder" in game.game_image_main.url %}
-                <a href="car-details.html" class="car-img">
+                <a href="{{ game.game_image_main.url }}" class="car-img">
                   <img
                     class="d-block w-100"
-                    src="img/car/car-1.jpg"
-                    alt="car"
+                    src="{% static 'img/logos/logo.jpg' %}"
+                    alt="ScatterShot logo"
                   />
                 </a>
                 {% else %}
-                <a href="car-details.html" class="car-img">
+                <a href="{{ game.game_image_main.url }}" class="car-img">
                   <img
                     class="d-block w-100"
                     src="{{ game.game_image_main.url }}"
-                    alt="car"
+                    alt="main Game Image"
                   />
                 </a>
                 {% endif %}
@@ -78,10 +78,10 @@
               </div>
               <div class="detail">
                 <h1 class="title">
-                    <a href="car-details.html">{{ game.game_title }}</a>
+                    <a href="{% url 'game_detail' game.slug %}">{{ game.game_title }}</a>
                 </h1>
                 <div class="location">
-                    <a href="car-details.html">
+                    <a href="{% url 'game_detail' game.slug %}">
                         <i class="flaticon-pin"></i>{{ game.creator}}
                     </a>
                     <p>{{ game.created_on }}</p>
@@ -123,6 +123,6 @@
     </div>
   </div>
   <!-- Featured car end -->
-
-  {% endblock %}
 </div>
+
+{% endblock %}

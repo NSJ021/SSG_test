@@ -29,8 +29,8 @@ class GamesAdmin(SummernoteModelAdmin):
     thumbnail.short_description = 'Image'
     
     
-    list_display = ('game_title', 'thumbnail','creator', 'game_brief', 'is_featured')
+    list_display = ('game_title', 'thumbnail', 'slug','creator', 'game_brief', 'is_featured')
     search_fields = ['game_title', 'game_brief', 'description']
     list_filter = ('is_featured',)
-    # prepopulated_fields = {'slug': ('game_title',)}
+    prepopulated_fields = {'slug': ('game_title',)}
     summernote_fields = ('game_brief', 'description',)

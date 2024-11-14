@@ -481,6 +481,10 @@ input[type=checkbox]:checked + label:before {
     padding: 0;
 }
 
+.card-img-top{
+    border-radius: 25px;
+}
+
 /** Solid buttons colors **/
 .button-default {
     color: #555;
