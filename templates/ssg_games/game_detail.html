@@ -31,13 +31,15 @@
                 <!-- The post content goes inside the card-text. -->
                 <!-- Use the | safe filter inside the template tags -->
                 <article class="card-text">
-                    {{ game.game_brief | safe }}
+                    
+                    <p>{{ game.game_brief | safe }}</p>
 
-                    {{ game.description | safe }}
+                    <p>{{ game.description | safe }}</p>
 
-                    Players : {{ game.players }}
+                    <p>Players : {{ game.players }}</p>
 
-                    Play Time : {{ game.game_time }}
+                    <p>Play Time : {{ game.game_time }}</p>
+
                 </article>
             </div>
         </div>

@@ -1,3 +1,12 @@
+"""
+This module contains the views for the blog application.
+
+Views:
+    Blog: Renders a list of all the blog posts in the database.
+    post_detail: Displays an individual blog post entry along with its comments.
+    comment_edit: Displays an individual comment for editing.
+"""
+
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
@@ -10,7 +19,12 @@ from .forms import CommentForm
 
 class Blog(generic.ListView):
     """
-    Renders a list of all the blog posts with the database
+    Renders a list of all the blog posts in the database.
+
+    Attributes:
+        queryset (QuerySet): The queryset containing all published blog posts.
+        template_name (str): The template used to render the list of blog posts.
+        paginate_by (int): The number of blog posts to display per page.
     """
     queryset = Post.objects.filter(status=1)
     template_name = "ssg_blog/blog.html"
@@ -26,17 +40,16 @@ def post_detail(request, slug):
     ``post``
         An instance of :model:`blog.Post`.
     ``comments``
-        All approved comments related to the post
-     ``comment_count``
-        a count of approved comments related to the post.
+        All approved comments related to the post.
+    ``comment_count``
+        A count of approved comments related to the post.
     ``comment_form``
-        instance of form blog.CommentForm
-    
+        An instance of :form:`blog.CommentForm`.
+
     **Template:**
 
     :template:`post_detail.html`
     """
-
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
@@ -70,17 +83,18 @@ def post_detail(request, slug):
     
 def comment_edit(request, slug, comment_id):
     """
-    Display an individual comment for edit
+    Display an individual comment for editing.
 
     **Context**
 
-    ``post``
-        An instance of :model:`blog.Post`.
-    ``comments``
-        All approved comments related to the post
+    ``comment``
+        An instance of :model:`blog.Comment`.
     ``comment_form``
-        instance of form blog.CommentForm
+        An instance of :form:`blog.CommentForm`.
 
+    **Template:**
+
+    :template:`comment_edit.html`
     """
     if request.method == "POST":
 
