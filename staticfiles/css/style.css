@@ -55,12 +55,16 @@ ul {
     color: #3b589e !important;
 }
 
+.instagram:hover {
+    color: #e4405f !important;
+}
+
 .kickstarter:hover {
     color: #56d7fe !important;
 }
 
 .itchio:hover {
-    color: #dc4e41 !important;
+    color: #fede07 !important;
 }
 
 
@@ -72,18 +76,28 @@ ul {
     color: #fff;
 }
 
+.instagram-bg {
+    background: #e4405f;
+    color: #fff;
+}
+
 .kickstarter-bg {
     background: #33CCFF;
     color: #fff;
 }
 
 .itchio-bg {
-    background: #db4437;
+    background: #fede07;
     color: #fff;
 }
 
 .facebook-bg:hover {
     background: #3b589e;
+    color: #fff;
+}
+
+.instagram-bg:hover {
+    background: #e4405f;
     color: #fff;
 }
 
@@ -93,7 +107,7 @@ ul {
 }
 
 .itchio-bg:hover {
-    background: #dc4e41;
+    background: #fede07;
     color: #fff;
 }
 
@@ -2854,6 +2868,17 @@ input[type=checkbox]:checked + label:before {
 }
 
 /** Car box 3 **/
+
+.featured-games-box {
+    position: relative;
+    margin-bottom: 30px;
+    background: #fff;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 25px;
+    height: 65vh;
+}
+
 .car-box-3 {
     position: relative;
     margin-bottom: 30px;
@@ -2861,6 +2886,7 @@ input[type=checkbox]:checked + label:before {
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     border-radius: 25px;
+    height: 80vh;
 }
 
 .car-box-3:hover{
@@ -3890,12 +3916,16 @@ footer {
     background: #4867aa!important;
 }
 
+.footer .instagram-bg:hover {
+    background: #e4405f!important;
+}
+
 .footer .kickstarter-bg:hover {
     background: #56d7fe!important;
 }
 
 .footer .itchio-bg:hover {
-    background: #dc4e41!important;
+    background: #fede07!important;
 }
 
 

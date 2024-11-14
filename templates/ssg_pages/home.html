@@ -112,12 +112,12 @@
                             {% if "placeholder" in game.game_image_main.url %}
                             <a href="#" class="car-img">
                                 <div class="tag-2">Featured</div>
-                                <img class="d-block w-100" draggable="false" src="{% static 'img/logos/logo.jpg' %}" alt="ScatterShot Logo" style="min-height: 350px; max-height:350px">
+                                <img class="d-block w-100" draggable="false" src="{% static 'img/logos/logo.jpg' %}" alt="ScatterShot Logo" style="min-height: 450px; max-height: 450px;">
                             </a>
                             {% else %}
                             <a href="#" class="car-img">
                                 <div class="tag-2">Featured</div>
-                                <img class="d-block w-100" draggable="false" src="{{ game.game_image_main.url }}" alt="{{ game.game_title }}" style="min-height: 350px; max-height:350px">
+                                <img class="d-block w-100" draggable="false" src="{{ game.game_image_main.url }}" alt="{{ game.game_title }}" style="min-height: 450px; max-height: 450px;">
                             </a>
                             {% endif %}
                             <div class="carbox-overlap-wrapper">
@@ -128,18 +128,26 @@
                                                 <i class="fa fa-expand"></i>
                                                 <img class="hidden" draggable="false" src="{{ game.game_image_main.url }}">
                                             </a>
+                                            {% if game.game_image_2 %}
                                             <a href="{{ game.game_image_2.url }}" class="hidden">
                                                 <img class="hidden" draggable="false" src="{{ game.game_image_2.url }}">
                                             </a>
+                                            {% endif %}
+                                            {% if game.game_image_3 %}
                                             <a href="{{ game.game_image_3.url }}" class="hidden">
                                                 <img class="hidden" draggable="false" src="{{ game.game_image_3.url }}">
                                             </a>
+                                            {% endif %}
+                                            {% if game.game_image_4 %}
                                             <a href="{{ game.game_image_4.url }}" class="hidden">
                                                 <img class="hidden" draggable="false" src="{{ game.game_image_4.url }}">
                                             </a>
+                                            {% endif %}
+                                            {% if game.game_image_5 %}
                                             <a href="{{ game.game_image_5.url }}" class="hidden">
                                                 <img class="hidden" draggable="false" src="{{ game.game_image_5.url }}">
                                             </a>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>

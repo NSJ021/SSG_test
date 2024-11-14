@@ -166,6 +166,20 @@ STATICFILES_DIRS = [
     
 ]
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+
+SUMMERNOTE_CONFIG = {
+    'attachment_storage_class': 'cloudinary_storage.storage.MediaCloudinaryStorage',
+    'attachment_url': 'https://res.cloudinary.com/dt5yygt6j/raw/upload/{filename}',
+    'attachment_upload_to': 'Scattershot-summernote/',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

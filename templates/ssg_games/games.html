@@ -22,7 +22,7 @@
                     class="d-block w-100"
                     src="{% static 'img/logos/logo.jpg' %}"
                     alt="ScatterShot logo"
-                    style="min-height: 350px;"
+                    style="min-height: 450px; max-height: 450px;"
                   />
                 </a>
                 {% else %}
@@ -31,7 +31,7 @@
                     class="d-block w-100"
                     src="{{ game.game_image_main.url }}"
                     alt="main Game Image"
-                    style="min-height: 350px;"
+                    style="min-height: 450px;  max-height: 450px;"
                   />
                 </a>
                 {% endif %}
@@ -49,30 +49,38 @@
                             src="{{ game.game_image_main.url }}"
                           />
                         </a>
+                        {% if game.game_image_2 %}
                         <a href="{{ game.game_image_2.url }}" class="hidden">
                           <img
                             class="hidden"
                             src="{{ game.game_image_2.url }}"
                           />
                         </a>
+                        {% endif %}
+                        {% if game.game_image_3 %}
                         <a href="{{ game.game_image_3.url }}" class="hidden">
                           <img
                             class="hidden"
                             src="{{ game.game_image_3.url }}"
                           />
                         </a>
+                        {% endif %}
+                        {% if game.game_image_4 %}
                         <a href="{{ game.game_image_4.url }}" class="hidden">
                           <img
                             class="hidden"
                             src="{{ game.game_image_4.url }}"
                           />
                         </a>
+                        {% endif %}
+                        {% if game.game_image_5 %}
                         <a href="{{ game.game_image_5.url }}" class="hidden">
                           <img
                             class="hidden"
                             src="{{ game.game_image_5.url }}"
                           />
                         </a>
+                        {% endif %}
                       </div>
                     </div>
                   </div>

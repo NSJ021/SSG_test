@@ -22,10 +22,10 @@ class Games(generic.ListView):
         context_object_name (str): The context variable name for the list of games.
         paginate_by (int): The number of games to display per page.
     """
-    queryset = Game.objects.all()  # Fetch all game entries
+    queryset = Game.objects.order_by('game_title')  # Fetch all game entries ordering by game_title (alphabetically)
     template_name = "ssg_games/games.html"  # Specify the template to use
     context_object_name = "games"  # Name of the context variable
-    paginate_by = 6  # Number of games per page
+    paginate_by = 4  # Number of games per page
 
 def game_detail(request, slug):
     """

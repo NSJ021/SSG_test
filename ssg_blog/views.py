@@ -28,7 +28,7 @@ class Blog(generic.ListView):
     """
     queryset = Post.objects.filter(status=1)
     template_name = "ssg_blog/blog.html"
-    paginate_by = 6
+    paginate_by = 3
 
 # Post details view
 def post_detail(request, slug):
