@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #64d362;
 }
 
 .brand {
@@ -26,12 +26,16 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #64d362;
 }
 
 .card {
     border: none;
     background-color: transparent;
+}
+
+.card-title {
+    color: #000000;
 }
 
 .image-container {

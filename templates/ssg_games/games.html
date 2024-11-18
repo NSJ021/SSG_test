@@ -12,7 +12,7 @@
       </div>
       <div class="col-12">
         <div class="row">
-          {% for game in object_list %}
+          {% for game in games %}
           <div class="col-lg-6 col-md-6">
             <div class="car-box-3">
               <div class="car-thumbnail">
@@ -22,7 +22,7 @@
                     class="d-block w-100"
                     src="{% static 'img/logos/logo.jpg' %}"
                     alt="ScatterShot logo"
-                    style="min-height: 450px; max-height: 450px;"
+                    style="min-height: 450px; max-height: 450px"
                   />
                 </a>
                 {% else %}
@@ -31,7 +31,7 @@
                     class="d-block w-100"
                     src="{{ game.game_image_main.url }}"
                     alt="main Game Image"
-                    style="min-height: 450px;  max-height: 450px;"
+                    style="min-height: 450px; max-height: 450px"
                   />
                 </a>
                 {% endif %}
@@ -56,24 +56,21 @@
                             src="{{ game.game_image_2.url }}"
                           />
                         </a>
-                        {% endif %}
-                        {% if game.game_image_3 %}
+                        {% endif %} {% if game.game_image_3 %}
                         <a href="{{ game.game_image_3.url }}" class="hidden">
                           <img
                             class="hidden"
                             src="{{ game.game_image_3.url }}"
                           />
                         </a>
-                        {% endif %}
-                        {% if game.game_image_4 %}
+                        {% endif %} {% if game.game_image_4 %}
                         <a href="{{ game.game_image_4.url }}" class="hidden">
                           <img
                             class="hidden"
                             src="{{ game.game_image_4.url }}"
                           />
                         </a>
-                        {% endif %}
-                        {% if game.game_image_5 %}
+                        {% endif %} {% if game.game_image_5 %}
                         <a href="{{ game.game_image_5.url }}" class="hidden">
                           <img
                             class="hidden"
@@ -88,51 +85,66 @@
               </div>
               <div class="detail">
                 <h1 class="title">
-                    <a href="{% url 'game_detail' game.slug %}">{{ game.game_title }}</a>
+                  <a href="{% url 'game_detail' game.slug %}"
+                    >{{ game.game_title }}</a
+                  >
                 </h1>
                 <div class="location">
-                    <a href="{% url 'game_detail' game.slug %}">
-                        <i class="flaticon-pin"></i>{{ game.creator}}
-                    </a>
-                    <p>{{ game.created_on }}</p>
-                    <p>{{ game.game_brief | safe }}</p>
+                  <a href="{% url 'game_detail' game.slug %}">
+                    {{ game.creator}}
+                  </a>
+                  <p>{{ game.created_on }}</p>
+                  <p>{{ game.game_brief | safe }}</p>
                 </div>
                 <ul class="facilities-list clearfix">
-                    <li>Players : {{ game.players }}</li>
-                    <li>Play Time : {{ game.game_time }} Minutes</li>
+                  <li>Players : {{ game.players }}</li>
+                  <li>Play Time : {{ game.game_time }} Minutes</li>
                 </ul>
-            </div>
+              </div>
             </div>
           </div>
           {% endfor %}
-
-          <!-- Page navigation start -->
-          <div class="pagination-box p-box-2 text-center">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#">
-                    <i class="fa fa-angle-left"></i
-                  ></a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link active" href="#">1</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                  <a class="page-link" href="#">
-                    <i class="fa fa-angle-right"></i
-                  ></a>
-                </li>
-              </ul>
-            </nav>
-          </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Featured car end -->
+</div>
+
+<!-- Page navigation start -->
+<div class="pagination-box p-box-2 text-center">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      {% if games.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ games.previous_page_number }}">
+            <i class="fa fa-angle-left"></i></a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link"><i class="fa fa-angle-left"></i></a>
+        </li>
+      {% endif %}
+
+      {% for page_num in games.paginator.page_range %}
+        {% if games.number == page_num %}
+          <li class="page-item active"><a class="page-link" href="#">{{ page_num }}</a></li>
+        {% else %}
+          <li class="page-item"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+        {% endif %}
+      {% endfor %}
+
+      {% if games.has_next %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ games.next_page_number }}">
+            <i class="fa fa-angle-right"></i></a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link"><i class="fa fa-angle-right"></i></a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
 </div>
 
 {% endblock %}

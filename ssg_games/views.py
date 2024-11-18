@@ -9,10 +9,11 @@ Views:
 from django.shortcuts import render, get_object_or_404  # Import render and get_object_or_404 for rendering templates and fetching objects
 from django.views import generic  # Import generic views for class-based views
 from ssg_games.models import Game  # Import the Game model
+from django.core.paginator import Paginator  # Import Paginator for paginating the list of games
 
 # Create your views here.
 
-class Games(generic.ListView):
+def games(request):
     """
     Renders a list of all the games in the database.
 
@@ -22,10 +23,17 @@ class Games(generic.ListView):
         context_object_name (str): The context variable name for the list of games.
         paginate_by (int): The number of games to display per page.
     """
-    queryset = Game.objects.order_by('game_title')  # Fetch all game entries ordering by game_title (alphabetically)
-    template_name = "ssg_games/games.html"  # Specify the template to use
-    context_object_name = "games"  # Name of the context variable
-    paginate_by = 4  # Number of games per page
+    games = Game.objects.order_by('game_title')  # Fetch all game entries ordering by game_title (alphabetically)
+    paginator = Paginator(games, 4)  # Paginate the queryset by 4 games per page
+    page = request.GET.get('page')  # Get the current page number
+    paged_games = paginator.get_page(page)  # Get the games for the current page
+
+    context = {
+        'games': paged_games  # Pass the paginated games to the template
+    }
+
+    return render(request, 'ssg_games/games.html', context)
+
 
 def game_detail(request, slug):
     """

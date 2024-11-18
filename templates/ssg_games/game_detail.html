@@ -11,7 +11,7 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ game.game_title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ game.creator }}</p>
+                <p class="post-subtitle"><i class="fa-solid fa-user"></i> {{ game.creator }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 {% if "placeholder" in game.game_image_main.url %}
@@ -36,9 +36,9 @@
 
                     <p>{{ game.description | safe }}</p>
 
-                    <p>Players : {{ game.players }}</p>
+                    <p><i class="fa-solid fa-user-plus"></i> Players : {{ game.players }}</p>
 
-                    <p>Play Time : {{ game.game_time }}</p>
+                    <p><i class="fa-solid fa-clock"></i> Play Time : {{ game.game_time }}</p>
 
                 </article>
             </div>

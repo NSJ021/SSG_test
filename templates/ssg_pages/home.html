@@ -155,19 +155,18 @@
                         </div>
                         <div class="detail">
                             <h1 class="title">
-                                <a href="{% url 'game_detail' game.slug %}">{{ game.game_title }}</a>
+                                <a href="{% url 'game_detail' game.slug %}"><i class="fa-solid fa-chess-board"></i> {{ game.game_title }}</a>
                             </h1>
                             <div class="location">
-                                <a href="car-details.html">
-                                    <i class="flaticon-pin"></i>{{ game.creator}}
+                                <a href="{% url 'game_detail' game.slug %}">
+                                    <i class="fa-solid fa-user"></i> {{ game.creator}}
                                 </a>
-                                <p>{{ game.created_on }}</p>
                                 <p>{{ game.game_brief | safe }}</p>
                             </div>
-                            <ul class="facilities-list clearfix">
-                                <li>Players : {{ game.players }}</li>
-                                <li>Play Time : {{ game.game_time }} Minutes</li>
-                            </ul>
+                            
+                                <p><i class="fa-solid fa-user-plus"></i> Players : {{ game.players }}</p>
+                                <p><i class="fa-solid fa-clock"></i> Play Time : {{ game.game_time }} Minutes</p>
+                            
                         </div>
                     </div>
                 </div>

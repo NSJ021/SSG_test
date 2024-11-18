@@ -108,19 +108,19 @@ $(function () {
                     $('.sticky-header').addClass('header-shrink');
                 }
                 if($('.do-sticky').length < 1) {
-                    $('.company-logo img').attr('src', 'static/img/logos/black-logo.png');
+                    $('.company-logo img').attr('src', 'static/img/logos/logo.jpg');
                 }
             }
             else {
                 $('.sticky-header').removeClass('header-shrink');
                 if($('.do-sticky').length < 1 && $('.fixed-header').length == 0 && $('.fixed-header2').length == 0) {
-                    $('.company-logo img').attr('src', 'static/img/logos/logo.png');
+                    $('.company-logo img').attr('src', 'static/img/logos/logo.jpg');
                 } else {
-                    $('.company-logo img').attr('src', 'static/img/logos/black-logo.png');
+                    $('.company-logo img').attr('src', 'static/img/logos/logo.jpg');
                 }
             }
         } else {
-            $('.company-logo img').attr('src', 'static/img/logos/black-logo.png');
+            $('.company-logo img').attr('src', 'static/img/logos/logo.jpg');
         }
     }
 
@@ -196,96 +196,96 @@ $(function () {
         zIndex: 2147483647
     });
 
-    // Counter
-    function isCounterElementVisible($elementToBeChecked) {
-        var TopView = $(window).scrollTop();
-        var BotView = TopView + $(window).height();
-        var TopElement = $elementToBeChecked.offset().top;
-        var BotElement = TopElement + $elementToBeChecked.height();
-        return ((BotElement <= BotView) && (TopElement >= TopView));
-    }
+    // // Counter
+    // function isCounterElementVisible($elementToBeChecked) {
+    //     var TopView = $(window).scrollTop();
+    //     var BotView = TopView + $(window).height();
+    //     var TopElement = $elementToBeChecked.offset().top;
+    //     var BotElement = TopElement + $elementToBeChecked.height();
+    //     return ((BotElement <= BotView) && (TopElement >= TopView));
+    // }
 
-    $(window).on('scroll', function () {
-        $(".counter").each(function () {
-            var isOnView = isCounterElementVisible($(this));
-            if (isOnView && !$(this).hasClass('Starting')) {
-                $(this).addClass('Starting');
-                $(this).prop('Counter', 0).animate({
-                    Counter: $(this).text()
-                }, {
-                    duration: 3000,
-                    easing: 'swing',
-                    step: function (now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
-            }
-        });
-    });
+    // $(window).on('scroll', function () {
+    //     $(".counter").each(function () {
+    //         var isOnView = isCounterElementVisible($(this));
+    //         if (isOnView && !$(this).hasClass('Starting')) {
+    //             $(this).addClass('Starting');
+    //             $(this).prop('Counter', 0).animate({
+    //                 Counter: $(this).text()
+    //             }, {
+    //                 duration: 3000,
+    //                 easing: 'swing',
+    //                 step: function (now) {
+    //                     $(this).text(Math.ceil(now));
+    //                 }
+    //             });
+    //         }
+    //     });
+    // });
 
 
-    // Countdown activation
-    $( function() {
-        // Add background image
-        //$.backstretch('../img/nature.jpg');
-        var endDate = "December  27, 2019 15:03:25";
-        $('.countdown.simple').countdown({ date: endDate });
-        $('.countdown.styled').countdown({
-            date: endDate,
-            render: function(data) {
-                $(this.el).html("<div>" + this.leadingZeros(data.days, 3) + " <span>Days</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>Hours</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>Minutes</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>Seconds</span></div>");
-            }
-        });
-        $('.countdown.callback').countdown({
-            date: +(new Date) + 10000,
-            render: function(data) {
-                $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
-            },
-            onEnd: function() {
-                $(this.el).addClass('ended');
-            }
-        }).on("click", function() {
-            $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
-        });
+    // // Countdown activation
+    // $( function() {
+    //     // Add background image
+    //     //$.backstretch('../img/nature.jpg');
+    //     var endDate = "December  27, 2019 15:03:25";
+    //     $('.countdown.simple').countdown({ date: endDate });
+    //     $('.countdown.styled').countdown({
+    //         date: endDate,
+    //         render: function(data) {
+    //             $(this.el).html("<div>" + this.leadingZeros(data.days, 3) + " <span>Days</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>Hours</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>Minutes</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>Seconds</span></div>");
+    //         }
+    //     });
+    //     $('.countdown.callback').countdown({
+    //         date: +(new Date) + 10000,
+    //         render: function(data) {
+    //             $(this.el).text(this.leadingZeros(data.sec, 2) + " sec");
+    //         },
+    //         onEnd: function() {
+    //             $(this.el).addClass('ended');
+    //         }
+    //     }).on("click", function() {
+    //         $(this).removeClass('ended').data('countdown').update(+(new Date) + 10000).start();
+    //     });
 
-    });
+    // });
 
-    $(".range-slider-ui").each(function () {
-        var minRangeValue = $(this).attr('data-min');
-        var maxRangeValue = $(this).attr('data-max');
-        var minName = $(this).attr('data-min-name');
-        var maxName = $(this).attr('data-max-name');
-        var unit = $(this).attr('data-unit');
+    // $(".range-slider-ui").each(function () {
+    //     var minRangeValue = $(this).attr('data-min');
+    //     var maxRangeValue = $(this).attr('data-max');
+    //     var minName = $(this).attr('data-min-name');
+    //     var maxName = $(this).attr('data-max-name');
+    //     var unit = $(this).attr('data-unit');
 
-        $(this).append("" +
-            "<span class='min-value'></span> " +
-            "<span class='max-value'></span>" +
-            "<input class='current-min' type='hidden' name='"+minName+"'>" +
-            "<input class='current-max' type='hidden' name='"+maxName+"'>"
-        );
-        $(this).slider({
-            range: true,
-            min: minRangeValue,
-            max: maxRangeValue,
-            values: [minRangeValue, maxRangeValue],
-            slide: function (event, ui) {
-                event = event;
-                var currentMin = parseInt(ui.values[0], 10);
-                var currentMax = parseInt(ui.values[1], 10);
-                $(this).children(".min-value").text( currentMin + " " + unit);
-                $(this).children(".max-value").text(currentMax + " " + unit);
-                $(this).children(".current-min").val(currentMin);
-                $(this).children(".current-max").val(currentMax);
-            }
-        });
+    //     $(this).append("" +
+    //         "<span class='min-value'></span> " +
+    //         "<span class='max-value'></span>" +
+    //         "<input class='current-min' type='hidden' name='"+minName+"'>" +
+    //         "<input class='current-max' type='hidden' name='"+maxName+"'>"
+    //     );
+    //     $(this).slider({
+    //         range: true,
+    //         min: minRangeValue,
+    //         max: maxRangeValue,
+    //         values: [minRangeValue, maxRangeValue],
+    //         slide: function (event, ui) {
+    //             event = event;
+    //             var currentMin = parseInt(ui.values[0], 10);
+    //             var currentMax = parseInt(ui.values[1], 10);
+    //             $(this).children(".min-value").text( currentMin + " " + unit);
+    //             $(this).children(".max-value").text(currentMax + " " + unit);
+    //             $(this).children(".current-min").val(currentMin);
+    //             $(this).children(".current-max").val(currentMax);
+    //         }
+    //     });
 
-        var currentMin = parseInt($(this).slider("values", 0), 10);
-        var currentMax = parseInt($(this).slider("values", 1), 10);
-        $(this).children(".min-value").text( currentMin + " " + unit);
-        $(this).children(".max-value").text(currentMax + " " + unit);
-        $(this).children(".current-min").val(currentMin);
-        $(this).children(".current-max").val(currentMax);
-    });
+    //     var currentMin = parseInt($(this).slider("values", 0), 10);
+    //     var currentMax = parseInt($(this).slider("values", 1), 10);
+    //     $(this).children(".min-value").text( currentMin + " " + unit);
+    //     $(this).children(".max-value").text(currentMax + " " + unit);
+    //     $(this).children(".current-min").val(currentMin);
+    //     $(this).children(".current-max").val(currentMax);
+    // });
 
     // Select picket
     $('.selectpicker').selectpicker();
@@ -316,70 +316,70 @@ $(function () {
         });
     }());
 
-    // Background video playing script
-    $(document).ready(function () {
-        $(".player").mb_YTPlayer(
-            {
-                mobileFallbackImage: 'img/banner/banner-1.jpg'
-            }
-        );
-    });
+    // // Background video playing script
+    // $(document).ready(function () {
+    //     $(".player").mb_YTPlayer(
+    //         {
+    //             mobileFallbackImage: 'img/banner/banner-1.jpg'
+    //         }
+    //     );
+    // });
 
-    // Multilevel menuus
-    $('[data-submenu]').submenupicker();
+    // // Multilevel menuus
+    // $('[data-submenu]').submenupicker();
 
-    // Expending/Collapsing advance search content
-    $('.show-more-options').on('click', function () {
-        if ($(this).find('.fa').hasClass('fa-minus-circle')) {
-            $(this).find('.fa').removeClass('fa-minus-circle');
-            $(this).find('.fa').addClass('fa-plus-circle');
-        } else {
-            $(this).find('.fa').removeClass('fa-plus-circle');
-            $(this).find('.fa').addClass('fa-minus-circle');
-        }
-    });
+    // // Expending/Collapsing advance search content
+    // $('.show-more-options').on('click', function () {
+    //     if ($(this).find('.fa').hasClass('fa-minus-circle')) {
+    //         $(this).find('.fa').removeClass('fa-minus-circle');
+    //         $(this).find('.fa').addClass('fa-plus-circle');
+    //     } else {
+    //         $(this).find('.fa').removeClass('fa-plus-circle');
+    //         $(this).find('.fa').addClass('fa-minus-circle');
+    //     }
+    // });
 
-    var videoWidth = $('.sidebar-widget').width();
-    var videoHeight = videoWidth * .61;
-    $('.sidebar-widget iframe').css('height', videoHeight);
-
-
-    // Megamenu activation
-    $(".megamenu").on("click", function (e) {
-        e.stopPropagation();
-    });
-
-    // Dropdown activation
-    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-        if (!$(this).next().hasClass('show')) {
-            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-        }
-        var $subMenu = $(this).next(".dropdown-menu");
-        $subMenu.toggleClass('show');
+    // var videoWidth = $('.sidebar-widget').width();
+    // var videoHeight = videoWidth * .61;
+    // $('.sidebar-widget iframe').css('height', videoHeight);
 
 
-        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-            $('.dropdown-submenu .show').removeClass("show");
-        });
+    // // Megamenu activation
+    // $(".megamenu").on("click", function (e) {
+    //     e.stopPropagation();
+    // });
 
-        return false;
-    });
+    // // Dropdown activation
+    // $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+    //     if (!$(this).next().hasClass('show')) {
+    //         $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+    //     }
+    //     var $subMenu = $(this).next(".dropdown-menu");
+    //     $subMenu.toggleClass('show');
 
 
-    // Full  Page Search Activation
-    $(function () {
-        $('a[href="#full-page-search"]').on('click', function(event) {
-            event.preventDefault();
-            $('#full-page-search').addClass('open');
-            $('#full-page-search > form > input[type="search"]').focus();
-        });
+    //     $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    //         $('.dropdown-submenu .show').removeClass("show");
+    //     });
 
-        $('#full-page-search, #full-page-search button.close').on('click keyup', function(event) {
-            if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-                $(this).removeClass('open');
-            }
-        });
-    });
+    //     return false;
+    // });
+
+
+    // // Full  Page Search Activation
+    // $(function () {
+    //     $('a[href="#full-page-search"]').on('click', function(event) {
+    //         event.preventDefault();
+    //         $('#full-page-search').addClass('open');
+    //         $('#full-page-search > form > input[type="search"]').focus();
+    //     });
+
+    //     $('#full-page-search, #full-page-search button.close').on('click keyup', function(event) {
+    //         if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+    //             $(this).removeClass('open');
+    //         }
+    //     });
+    // });
 
 
     // Slick Sliders
@@ -402,80 +402,80 @@ $(function () {
     });
 
 
-    $(".dropdown.btns .dropdown-toggle").on('click', function() {
-        $(this).dropdown("toggle");
-        return false;
-    });
+//     $(".dropdown.btns .dropdown-toggle").on('click', function() {
+//         $(this).dropdown("toggle");
+//         return false;
+//     });
 
 
 
-    // Dropzone initialization
-    Dropzone.autoDiscover = false;
-    $(function () {
-        $("div#myDropZone").dropzone({
-            url: "/file-upload"
-        });
-    });
+//     // Dropzone initialization
+//     Dropzone.autoDiscover = false;
+//     $(function () {
+//         $("div#myDropZone").dropzone({
+//             url: "/file-upload"
+//         });
+//     });
 
-    // Filterizr initialization
-    $(function () {
-        //$('.filtr-container').filterizr();
-    });
+//     // Filterizr initialization
+//     $(function () {
+//         //$('.filtr-container').filterizr();
+//     });
 
-    function toggleChevron(e) {
-        $(e.target)
-            .prev('.panel-heading')
-            .find(".fa")
-            .toggleClass('fa-minus fa-plus');
-    }
+//     function toggleChevron(e) {
+//         $(e.target)
+//             .prev('.panel-heading')
+//             .find(".fa")
+//             .toggleClass('fa-minus fa-plus');
+//     }
 
-    $('.panel-group').on('shown.bs.collapse', toggleChevron);
-    $('.panel-group').on('hidden.bs.collapse', toggleChevron);
+//     $('.panel-group').on('shown.bs.collapse', toggleChevron);
+//     $('.panel-group').on('hidden.bs.collapse', toggleChevron);
 
-    // Switching Color schema
-    function populateColorPlates() {
-        var plateStings = '<div class="option-panel option-panel-collased">\n' +
-            '    <h2>Change Color</h2>\n' +
-            '    <div class="color-plate default-plate" data-color="default"></div>\n' +
-            '    <div class="color-plate midnight-blue-plate" data-color="midnight-blue"></div>\n' +
-            '    <div class="color-plate yellow-plate" data-color="yellow"></div>\n' +
-            '    <div class="color-plate blue-plate" data-color="blue"></div>\n' +
-            '    <div class="color-plate green-light-plate" data-color="green-light"></div>\n' +
-            '    <div class="color-plate yellow-light-plate" data-color="yellow-light"></div>\n' +
-            '    <div class="color-plate green-plate" data-color="green"></div>\n' +
-            '    <div class="color-plate green-light-2-plate" data-color="green-light-2"></div>\n' +
-            '    <div class="color-plate red-plate" data-color="red"></div>\n' +
-            '    <div class="color-plate purple-plate" data-color="purple"></div>\n' +
-            '    <div class="color-plate brown-plate" data-color="brown"></div>\n' +
-            '    <div class="color-plate olive-plate" data-color="olive"></div>\n' +
-            '    <div class="setting-button">\n' +
-            '        <i class="fa fa-gear"></i>\n' +
-            '    </div>\n' +
-            '</div>';
-        $('body').append(plateStings);
-    }
-    $(document).on('click', '.color-plate', function () {
-        var name = $(this).attr('data-color');
-        $('link[id="style_sheet"]').attr('href', 'css/skins/' + name + '.css');
-    });
+//     // Switching Color schema
+//     function populateColorPlates() {
+//         var plateStings = '<div class="option-panel option-panel-collased">\n' +
+//             '    <h2>Change Color</h2>\n' +
+//             '    <div class="color-plate default-plate" data-color="default"></div>\n' +
+//             '    <div class="color-plate midnight-blue-plate" data-color="midnight-blue"></div>\n' +
+//             '    <div class="color-plate yellow-plate" data-color="yellow"></div>\n' +
+//             '    <div class="color-plate blue-plate" data-color="blue"></div>\n' +
+//             '    <div class="color-plate green-light-plate" data-color="green-light"></div>\n' +
+//             '    <div class="color-plate yellow-light-plate" data-color="yellow-light"></div>\n' +
+//             '    <div class="color-plate green-plate" data-color="green"></div>\n' +
+//             '    <div class="color-plate green-light-2-plate" data-color="green-light-2"></div>\n' +
+//             '    <div class="color-plate red-plate" data-color="red"></div>\n' +
+//             '    <div class="color-plate purple-plate" data-color="purple"></div>\n' +
+//             '    <div class="color-plate brown-plate" data-color="brown"></div>\n' +
+//             '    <div class="color-plate olive-plate" data-color="olive"></div>\n' +
+//             '    <div class="setting-button">\n' +
+//             '        <i class="fa fa-gear"></i>\n' +
+//             '    </div>\n' +
+//             '</div>';
+//         $('body').append(plateStings);
+//     }
+//     $(document).on('click', '.color-plate', function () {
+//         var name = $(this).attr('data-color');
+//         $('link[id="style_sheet"]').attr('href', 'css/skins/' + name + '.css');
+//     });
 
-    $(document).on('click', '.setting-button', function () {
-        $('.option-panel').toggleClass('option-panel-collased');
-    });
-});
+//     $(document).on('click', '.setting-button', function () {
+//         $('.option-panel').toggleClass('option-panel-collased');
+//     });
+// });
 
-// mCustomScrollbar initialization
-(function ($) {
-    $(window).resize(function () {
-        $('#map').css('height', $(this).height() - 110);
-        if ($(this).width() > 768) {
-            $(".map-content-sidebar").mCustomScrollbar(
-                {theme: "minimal-dark"}
-            );
-            $('.map-content-sidebar').css('height', $(this).height() - 110);
-        } else {
-            $('.map-content-sidebar').mCustomScrollbar("destroy"); //destroy scrollbar
-            $('.map-content-sidebar').css('height', '100%');
-        }
-    }).trigger("resize");
+// // mCustomScrollbar initialization
+// (function ($) {
+//     $(window).resize(function () {
+//         $('#map').css('height', $(this).height() - 110);
+//         if ($(this).width() > 768) {
+//             $(".map-content-sidebar").mCustomScrollbar(
+//                 {theme: "minimal-dark"}
+//             );
+//             $('.map-content-sidebar').css('height', $(this).height() - 110);
+//         } else {
+//             $('.map-content-sidebar').mCustomScrollbar("destroy"); //destroy scrollbar
+//             $('.map-content-sidebar').css('height', '100%');
+//         }
+//     }).trigger("resize");
 })(jQuery);
