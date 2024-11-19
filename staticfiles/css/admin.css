@@ -1,0 +1,47 @@
+/* Admin CSS, Styling for admin panel*/
+
+:root {
+    /* Colour Variables */
+  
+    --theme_red: #f20303;
+    --theme_green: #7adf7d;
+    --white: #ffffff;
+    --black: #000000;
+
+    background-color: var(--white);
+}
+
+.login {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+
+/* Header */
+#header {
+    background-color: var(--white) !important;
+    color: var(--black) !important;
+    box-shadow: 0px 0px 10px 0px var(--theme_green);
+}
+
+#header a {
+    color: var(--black) !important;
+}
+
+#header a:hover {
+    color: var(--theme_green) !important;
+}
+
+#header a:active {
+    color: var(--theme_green) !important;
+}
+
+#header button {
+    background-color: var(--white) !important;
+    color: var(--black) !important;
+}
+
+#header button:hover {
+    color: var(--theme_green) !important;
+}
+

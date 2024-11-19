@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 
 <!-- blog.html content starts here -->
 <div class="container-fluid">
@@ -7,6 +9,7 @@
     <div class="col-12 mt-3 left">
       <div class="row">
         {% for post in posts %}
+        {% if post.status == 1 %}
         <div class="col-md-4">
           <div class="card mb-4">
             <div class="card-body">
@@ -37,10 +40,13 @@
             </div>
           </div>
         </div>
-        {% if forloop.counter|divisibleby:3 %}
+        {% if forloop.counter|divisibleby:10 %}
       </div>
-        {% endif %} 
-      {% endfor %}
+      <div class="row">
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>

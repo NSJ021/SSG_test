@@ -26,9 +26,9 @@ class Blog(generic.ListView):
         template_name (str): The template used to render the list of blog posts.
         paginate_by (int): The number of blog posts to display per page.
     """
-    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.order_by("-created_on")
     template_name = "ssg_blog/blog.html"
-    paginate_by = 3
+    paginate_by = 9
 
 # Post details view
 def post_detail(request, slug):

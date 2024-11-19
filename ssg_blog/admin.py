@@ -58,7 +58,7 @@ class PostAdmin(SummernoteModelAdmin):
     - `list_display_links`:
         Specifies the fields that should be clickable links in the list view: title, thumbnail, and author.
     - `list_editable`:
-        Specifies the fields that should be editable directly in the list view: is featured.
+        Specifies the fields that should be editable directly in the list view: status and is featured.
     - `prepopulated_fields`:
         Specifies the fields to prepopulate based on other fields: slug from title.
     - `summernote_fields`:
@@ -77,7 +77,7 @@ class PostAdmin(SummernoteModelAdmin):
     # Fields that should be clickable links in the list view
     list_display_links = ('title','thumbnail', 'author',)
     # Fields that should be editable directly in the list view
-    list_editable = ('is_featured',)
+    list_editable = ('status', 'is_featured',)
     # Fields to filter the list view by
     list_filter = ('status', 'created_on', 'author',)
     # Fields to prepopulate based on other fields
