@@ -19,6 +19,12 @@ import dj_database_url
 
 if os.path.isfile('env.py'):
     import env
+    DEBUG = True
+else:
+    DEBUG = False
+    
+# SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG = False
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,8 +36,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -53,6 +58,7 @@ INSTALLED_APPS = [
     'ssg_pages',
     'ssg_games',
     'ssg_blog',
+    'ssg_accounts',
     
 ]
 

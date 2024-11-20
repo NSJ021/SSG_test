@@ -5,15 +5,10 @@
   
     --theme_red: #f20303;
     --theme_green: #7adf7d;
+    --theme_blue: #417690;
     --white: #ffffff;
     --black: #000000;
 
-    background-color: var(--white);
-}
-
-.login {
-    background-color: var(--white);
-    color: var(--black);
 }
 
 
@@ -21,7 +16,7 @@
 #header {
     background-color: var(--white) !important;
     color: var(--black) !important;
-    box-shadow: 0px 0px 10px 0px var(--theme_green);
+    box-shadow: 0px 0px 10px 0px var(--theme_blue);
 }
 
 #header a {
@@ -29,11 +24,11 @@
 }
 
 #header a:hover {
-    color: var(--theme_green) !important;
+    color: var(--theme_blue) !important;
 }
 
 #header a:active {
-    color: var(--theme_green) !important;
+    color: var(--theme_blue) !important;
 }
 
 #header button {
@@ -42,6 +37,10 @@
 }
 
 #header button:hover {
-    color: var(--theme_green) !important;
+    color: var(--theme_blue) !important;
 }
 
+.theme-toggle svg.theme-icon-when-auto, .theme-toggle svg.theme-icon-when-dark, .theme-toggle svg.theme-icon-when-light{
+    fill: var(--black) !important;
+    color: var(--white);
+}
