@@ -215,7 +215,7 @@ ul {
     text-transform: uppercase;
     color: #fff;
     transition: .5s;
-    border-radius: 2px;
+    border-radius: 25px;
     border: none;
     font-family: 'Roboto', sans-serif;
 }
@@ -267,7 +267,7 @@ button:focus {
     font-size: 15px;
     font-weight: 400;
     text-transform: uppercase;
-    border-radius: 3px;
+    border-radius: 25px;
 }
 
 .btn:focus, .btn:active, .btn:focus {
@@ -399,7 +399,7 @@ button:focus {
     bottom: 25px;
     right: 25px;
     box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
+    border-radius: 25px;
     z-index:1000 !important;
 }
 
@@ -5583,7 +5583,7 @@ footer {
     margin: 2px 0 3px 0;
     height: 35px;
     line-height: 35px;
-    border-radius: 3px;
+    border-radius: 25px;
     display: inline-block;
     text-align: center;
     text-decoration: none;
@@ -5594,7 +5594,7 @@ footer {
     width: 35px;
     line-height: 35px;
     float: left;
-    border-radius: 3px;
+    border-radius: 25px;
 }
 
 .contact-section .form-section .social-list li a span{
@@ -5669,7 +5669,7 @@ footer {
     padding: 14.5px 50px 13.5px 50px;
     font-size: 15px;
     font-weight: 400;
-    border-radius: 3px;
+    border-radius: 25px;
 }
 
 .contact-section .form-section input[type=checkbox], input[type=radio] {
@@ -9659,7 +9659,7 @@ table {
 
 input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
     font-size: 14px;
-    color: #c6c4c4 !important;
+    color: #000000 !important;
 }
 .form-control:disabled, .form-control[readonly]{
     font-size: 14px;
