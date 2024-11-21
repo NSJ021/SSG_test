@@ -478,4 +478,9 @@ $(function () {
 //             $('.map-content-sidebar').css('height', '100%');
 //         }
 //     }).trigger("resize");
+    setTimeout(function () {
+
+        $('#message').fadeOut('slow');
+
+    }, 4000); // <-- time in milliseconds
 })(jQuery);

@@ -157,9 +157,13 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+# Message Settings
+
 MESSAGE_TAGS ={
     messages.SUCCESS: 'alert-success',
     messages.ERROR: 'alert-danger',
+    messages.INFO: 'alert-info',
 }
 
 # Static files (CSS, JavaScript, Images)
@@ -172,11 +176,15 @@ STATICFILES_DIRS = [
     
 ]
 
+# Cloudinary Settings
+
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
     'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
+
+# Summernote Settings
 
 SUMMERNOTE_CONFIG = {
     'attachment_storage_class': 'cloudinary_storage.storage.MediaCloudinaryStorage',
