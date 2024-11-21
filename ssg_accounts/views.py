@@ -44,12 +44,33 @@ def signup(request):
     else:
         return render(request, 'ssg_accounts/signup.html')
 
-
+# Login view
 def login(request):
+    #
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        user = auth.authenticate(username=username, password=password)
+        
+        # Check if user exists
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, 'You are now logged in')
+            return redirect('dashboard')
+        else:
+            messages.error(request, 'Invalid credentials')
+            return redirect('login')
+        
     return render(request, 'ssg_accounts/login.html')
 
-def logout(request):    
+# Logout view
+def logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request, 'You are now logged out')    
     return redirect('home')
 
+# Dashboard view
 def dashboard(request):
     return render(request, 'ssg_accounts/dashboard.html')

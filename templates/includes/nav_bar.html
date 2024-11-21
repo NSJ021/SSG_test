@@ -65,7 +65,20 @@
                         {% endif %}
                         class="nav-link" href="{% url 'contact' %}">Contact</a>
                     </li>
+                    {% comment %} Checking if user is logged in {% endcomment %}
+                    {% if user.is_authenticated %}
                     <li class='nav-item'>
+                        <a class="nav-link" href="{% url 'dashboard' %}" class="sign-in nav-link"><i class="fa fa-user"></i> Dashboard</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}" class="sign-out nav-link"><i class="fa fa-sign-out"></i> Logout</a>
+                        <form action="{% url 'logout' %}" method="POST" id="logout">
+                            {% csrf_token %}
+                            <input type="hidden">
+                        </form>
+                    </li>
+                    {% else %}
+                        <li class='nav-item'>
                         <a                        
                         {% if '/accounts/login' == request.path %}
                         class="nav-link active"
@@ -83,6 +96,7 @@
                         {% endif %} 
                         class="nav-link" href="{% url 'signup' %}" class="sign-in nav-link"><i class="fa fa-user"></i> Register</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
