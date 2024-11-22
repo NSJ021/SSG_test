@@ -7,6 +7,7 @@
 <div class="masthead">
     <div class="container">
         <div class="row g-0">
+            {% include 'includes/messages.html' %}
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
@@ -56,9 +57,7 @@
                 <!-- We want a for loop inside the empty control tags
           to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}">
+                <div class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">

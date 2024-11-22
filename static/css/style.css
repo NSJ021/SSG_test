@@ -251,7 +251,8 @@ button:focus {
 }
 
 .btn {
-    border-radius: 2px;
+    border-radius: 25px;
+    margin-top: 20px;
 }
 
 .btn-sm {
@@ -4767,6 +4768,9 @@ footer {
     list-style: none;
     margin: 0;
     padding: 0;
+    background-color: var(--white);
+    border-radius: 25px;
+    margin: 20px 0px;
 }
 
 .comment {
@@ -9667,6 +9671,7 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 
 .form-control{
         color: #000000 !important;
+        border-radius: 25px;
 }
 .contact-dealer.modal-header{
     background: #f0151f !important;

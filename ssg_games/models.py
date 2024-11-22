@@ -6,6 +6,7 @@ Models:
 """
 
 from django.db import models
+from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 # Player Amount and Game Length Choices
@@ -59,3 +60,35 @@ class Game(models.Model):
 
     def __str__(self):
         return f"{self.game_title} | Created by {self.creator}"
+    
+    
+    
+    # Comment Model
+class Comment(models.Model):
+    """
+    Stores a single comment entry, related to :model:`blog.Post` and :model:`auth.User`.
+
+    Attributes:
+        post (ForeignKey): The blog post that the comment is related to, related to :model:`blog.Post`.
+        author (ForeignKey): The author of the comment, related to :model:`auth.User`.
+        body (TextField): The main content of the comment.
+        approved (BooleanField): Indicates if the comment is approved.
+        created_on (DateTimeField): The date and time when the comment was created.
+
+    Meta:
+        ordering: Orders the comments by creation date in descending order.
+    """
+    game = models.ForeignKey(
+        Game, on_delete=models.CASCADE, related_name="game_comments")
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="game_commenter")
+    body = models.TextField()
+    approved = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    # Meta class and assigning string names to Post objects
+    class Meta:
+        ordering = ["-created_on"]
+
+    def __str__(self):
+        return f"{self.body} by {self.author}"

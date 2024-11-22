@@ -25,7 +25,8 @@ GamesAdmin:
 
 from django.contrib import admin  # Import Django admin
 from django_summernote.admin import SummernoteModelAdmin  # Import SummernoteModelAdmin for rich text editing
-from .models import Game  # Import the Game model
+from .models import Game, Comment  # Import the Game model
+
 from django.utils.html import format_html  # Import format_html for HTML formatting
 
 # Register your models here.
@@ -67,3 +68,32 @@ class GamesAdmin(SummernoteModelAdmin):
     list_editable = ('is_featured',)  # Fields that should be editable directly in the list view
     prepopulated_fields = {'slug': ('game_title',)}  # Fields to prepopulate based on other fields
     summernote_fields = ('game_brief', 'description',)  # Fields to use the Summernote text editor on
+    
+    # Admin configuration for the Comment model
+@admin.register(Comment)
+class CommentAdmin(SummernoteModelAdmin):
+    """
+    Admin panel configuration for the Comment model.
+
+    **Attributes:**
+
+    - `list_display`:
+        Specifies the fields to display in the list view: post, body, author, approved, and created on.
+    - `list_filter`:
+        Specifies the fields to filter the list view by: author, created on, and approved.
+    - `search_fields`:
+        Specifies the fields to include in the search functionality: post, body, author, and created on.
+    - `list_display_links`:
+        Specifies the fields that should be clickable links in the list view: post, body, and author.
+    """
+    
+    # Fields to display in the admin list view
+    list_display = ('game', 'body', 'author', 'approved', 'created_on')
+    # Fields to filter the list view by
+    list_filter = ('author', 'created_on', 'approved')
+    # Fields that should be clickable links in the list view
+    list_display_links = ('game','body', 'author',)
+    # Fields that should be editable directly in the list view
+    list_editable = ('approved',)
+    # Fields to include in the search functionality
+    search_fields = ('game', 'body', 'author', 'created_on')
