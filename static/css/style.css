@@ -4769,7 +4769,7 @@ footer {
     margin: 0;
     padding: 0;
     background-color: var(--white);
-    border-radius: 25px;
+    border-radius: 10px;
     margin: 20px 0px;
 }
 
@@ -9671,7 +9671,7 @@ input, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder{
 
 .form-control{
         color: #000000 !important;
-        border-radius: 25px;
+        border-radius: 10px;
 }
 .contact-dealer.modal-header{
     background: #f0151f !important;

@@ -110,5 +110,7 @@ class CommentAdmin(SummernoteModelAdmin):
     list_filter = ('author', 'created_on', 'approved')
     # Fields that should be clickable links in the list view
     list_display_links = ('post','body', 'author',)
+    # Fields that should be editable directly in the list view
+    list_editable = ('approved',)
     # Fields to include in the search functionality
     search_fields = ('post', 'body', 'author', 'created_on')
