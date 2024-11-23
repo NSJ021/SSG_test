@@ -92,7 +92,7 @@
                                 <a href="{% url 'game_detail' game.slug %}">
                                     <i class="fa-solid fa-user"></i> {{ game.creator}}
                                 </a>
-                                <p>{{ game.game_brief | safe }}</p>
+                                {{ game.game_brief | safe }}
                             </div>
                             
                                 <p><i class="fa-solid fa-user-plus"></i> Players : {{ game.players }}</p>
@@ -156,7 +156,6 @@
             {% endif %}
             {% endfor %}
         </div>
-        </div>
     </div>
 </div>
 <!-- Blog Section end -->
@@ -186,9 +185,9 @@
                             </a>
                         </div>
                         <div class="details">
-                            <h4><a href="#">{{team.f_name}}</a></h4>
+                            <h4><a href="#"></a>{{team.f_name}}</h4>
                             <h5>{{team.position}}</h5>
-                            <p>{{team.content | safe}}</p>
+                            {{team.content | safe}}
                         </div>
                     </div>
                 </div>
