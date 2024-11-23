@@ -26,7 +26,7 @@
                     </li>
                     <li class='nav-item'>
                         <a                        
-                        {% if '/games/' == request.path %}
+                        {% if request.resolver_match.url_name == 'games' %}
                         class="nav-link active"
                         {% else %} 
                         class="nav-link"
@@ -48,7 +48,7 @@
                     </li>
                     <li class='nav-item'>
                         <a                        
-                        {% if '/blog' == request.path %}
+                        {% if request.resolver_match.url_name == 'blog' %}
                         class="nav-link active"
                         {% else %} 
                         class="nav-link"
@@ -59,14 +59,14 @@
                     </li>
                     <li class='nav-item'>
                         <a                        
-                        {% if '/contact' == request.path %}
+                        {% if request.resolver_match.url_name == 'contact' %}
                         class="nav-link active"
                         {% else %} 
                         class="nav-link"
                         {% endif %}
                         href="{% url 'contact' %}"><i class="fa-solid fa-message"></i>
                          Contact
-                    </a>
+                        </a>
                     </li>
                     {% comment %} Checking if user is logged in {% endcomment %}
                     {% if user.is_authenticated %}

@@ -119,14 +119,3 @@ def blog(request):
                 'comments': comment
             },
     )
-
-def contact(request):
-    """
-    Renders the contact page.
-
-    **Template:**
-
-    :template:`ssg_pages/contact.html`
-    """
-    # Render the contact page template
-    return render(request, 'ssg_pages/contact.html')

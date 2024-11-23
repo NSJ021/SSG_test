@@ -3,6 +3,7 @@
 {% block content %}
 {% load static %}
 
+<!-- Dashboard start -->
 <!-- Banner start -->
 <div class="banner" id="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -27,6 +28,47 @@
         {% if is_superuser %}
         <a href="/admin/" class="btn btn-primary mb-4">Go to Admin Panel</a>
         {% endif %}
+    </div>
+
+    <!-- User Messages Section -->
+    <div class="table-responsive">
+        <h2>Your <span>Messages</span> </h2>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Created On</th>
+                    <th>Read</th>
+                    <th>Replied</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in user_messages %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ message.name }}</td>
+                    <td>{{ message.subject }}</td>
+                    <td>{{ message.message }}</td>
+                    <td>{{ message.created_on }}</td>
+                    <td>
+                    {% if message.message_read %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}</td>
+                    <td>
+                    {% if message.message_replied %}
+                        Yes
+                    {% else %}
+                        No
+                    {% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
     <!-- Blog Comments Section -->
@@ -89,4 +131,5 @@
         </table>
     </div>
 </div>
+<!-- Dashboard end -->
 {% endblock %}

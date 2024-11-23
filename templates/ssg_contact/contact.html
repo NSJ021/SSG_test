@@ -6,6 +6,9 @@
 
 {% load static %}
 
+
+<!-- Contact start -->
+
 <!-- Banner start -->
 <div class="banner" id="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -26,22 +29,43 @@
     <div class="container">
         <!-- Main title -->
         <div class="main-title text-center">
+            <!-- Add a message to the user -->
+            {% include 'includes/messages.html' %}
             <h2><i class="fa-solid fa-message"></i> <span>Get In Touch</span> <i class="fa-solid fa-message"></i></h2>
             <p>Got an idea for a game? <br> Want to more information on ScatterShot and our Games? <br> Get In Touch Below!</p>
         </div>
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <!-- Contact form -->
+        <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
+            <!-- Add CSRF Token -->
             {% csrf_token %}
+            <!-- Add User ID if user is authenticated -->
+            {% if user.is_authenticated %}
+            <!-- Add a hidden input field to store the user ID -->
+                <input type="hidden" name="user" value="{{ user.id }}">
+            {% else %}
+                <input type="hidden" name="user" value="0">
+            {% endif %}          
             <div class="row">
                 <div class="col-lg-7">
                     <div class="row">
                         <div class="col-md-6 text-left">
                             <div class="form-group name">
+                                <!-- Check if the user is authenticated and add their name to the form -->
+                                {% if user.is_authenticated %}
+                                <input type="text" name="name" class="form-control" placeholder="Full Name" value="{{ user.first_name }} {{ user.last_name }}" required>
+                                {% else %}
                                 <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group email">
+                                <!-- Check if the user is authenticated and add their email to the form -->
+                                {% if user.is_authenticated %}
+                                <input type="email" name="email" class="form-control" placeholder="Email" value="{{ user.email }} " required>
+                                {% else %}
                                 <input type="email" name="email" class="form-control" placeholder="Email" required>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -56,7 +80,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group message">
-                                <textarea class="form-control" name="message" placeholder="Write message"></textarea>
+                                <textarea class="form-control" name="message" placeholder="Write message" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -66,6 +90,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Contact Info -->
                 <div class="col-lg-5">
                     <div class="contact-info-2">
                         <div class="ci-box">
@@ -101,7 +126,7 @@
         </form>
     </div>
 </div>
-<!-- Contact 2 end -->
+<!-- Contact end -->
 
 
 

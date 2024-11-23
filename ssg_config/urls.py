@@ -23,6 +23,7 @@ urlpatterns = [
     path('blog/', include('ssg_blog.urls')),
     path('accounts/', include('ssg_accounts.urls')),
     path('socialaccounts/', include('allauth.urls')),
+    path('contact/', include('ssg_contact.urls')),
     path('summernote/', include('django_summernote.urls')),
     path('', include('ssg_pages.urls')),
 ]

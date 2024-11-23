@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'ssg_games',
     'ssg_blog',
     'ssg_accounts',
+    'ssg_contact',
     # Providers
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
