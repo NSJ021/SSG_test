@@ -88,5 +88,6 @@ def dashboard(request):
     context = {
         'blog_comments': blog_comments,
         'game_comments': game_comments,
+        'is_superuser': request.user.is_superuser,
     }
     return render(request, 'ssg_accounts/dashboard.html', context)

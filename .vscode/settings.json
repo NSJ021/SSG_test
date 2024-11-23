@@ -16,10 +16,12 @@
    "workbench.colorTheme": "Visual Studio Dark",
    "terminal.integrated.gpuAcceleration": "canvas",
    "cSpell.words": [
+      "allauth",
       "cloneditem",
       "jnoty",
       "prepopulate",
       "selectpicker",
+      "socialaccount",
       "stylesheet",
       "Summernote"
    ],

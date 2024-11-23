@@ -23,6 +23,10 @@
     <div class="main-title" style="text-align:left !important;">
         <h1>Welcome <span>{{ request.user.username }}</span></h1>
         <p>Check out your recent activity on the ScatterShot Games</p>
+        <!-- Add Admin Panel Button for Superusers -->
+        {% if is_superuser %}
+        <a href="/admin/" class="btn btn-primary mb-4">Go to Admin Panel</a>
+        {% endif %}
     </div>
 
     <!-- Blog Comments Section -->
