@@ -37,7 +37,7 @@
             <div class="car-box-3">
               <div class="car-thumbnail">
                 {% if "placeholder" in game.game_image_main.url %}
-                <a href="{{ game.game_image_main.url }}" class="car-img">
+                <a href="{{ game.game_image_main.url }}" class="car-img" alt="placeholder-logo">
                   <img
                     class="d-block w-100"
                     src="{% static 'img/logos/logo.jpg' %}"
@@ -46,7 +46,7 @@
                   />
                 </a>
                 {% else %}
-                <a href="{{ game.game_image_main.url }}" class="car-img">
+                <a href="{{ game.game_image_main.url }}" class="car-img" alt="{{ game.game_title }}">
                   <img
                     class="d-block w-100"
                     src="{{ game.game_image_main.url }}"
@@ -67,6 +67,7 @@
                           <img
                             class="hidden"
                             src="{{ game.game_image_main.url }}"
+                            alt="{{ game.game_title }}"
                           />
                         </a>
                         {% if game.game_image_2 %}
@@ -74,6 +75,7 @@
                           <img
                             class="hidden"
                             src="{{ game.game_image_2.url }}"
+                            alt="{{ game.game_title }}"
                           />
                         </a>
                         {% endif %} {% if game.game_image_3 %}
@@ -81,6 +83,7 @@
                           <img
                             class="hidden"
                             src="{{ game.game_image_3.url }}"
+                            alt="{{ game.game_title }}"
                           />
                         </a>
                         {% endif %} {% if game.game_image_4 %}
@@ -88,6 +91,7 @@
                           <img
                             class="hidden"
                             src="{{ game.game_image_4.url }}"
+                            alt="{{ game.game_title }}"
                           />
                         </a>
                         {% endif %} {% if game.game_image_5 %}
@@ -95,6 +99,7 @@
                           <img
                             class="hidden"
                             src="{{ game.game_image_5.url }}"
+                            alt="{{ game.game_title }}"
                           />
                         </a>
                         {% endif %}
@@ -114,7 +119,7 @@
                     {{ game.creator}}
                   </a>
                   <p>{{ game.created_on }}</p>
-                  <p>{{ game.game_brief | safe }}</p>
+                  {{ game.game_brief | safe }}
                 </div>
                 <ul class="facilities-list clearfix">
                   <li>Players : {{ game.players }}</li>
