@@ -57,26 +57,26 @@
                                         <div class="car-magnify-gallery">
                                             <a href="{{ game.game_image_main.url }}" class="overlap-btn">
                                                 <i class="fa fa-expand"></i>
-                                                <img class="hidden" draggable="false" src="{{ game.game_image_main.url }}">
+                                                <img class="hidden" draggable="false" src="{{ game.game_image_main.url }}" alt="{{ game.game_title }}">
                                             </a>
                                             {% if game.game_image_2 %}
                                             <a href="{{ game.game_image_2.url }}" class="hidden">
-                                                <img class="hidden" draggable="false" src="{{ game.game_image_2.url }}">
+                                                <img class="hidden" draggable="false" src="{{ game.game_image_2.url }}" alt="{{ game.game_title }}">
                                             </a>
                                             {% endif %}
                                             {% if game.game_image_3 %}
                                             <a href="{{ game.game_image_3.url }}" class="hidden">
-                                                <img class="hidden" draggable="false" src="{{ game.game_image_3.url }}">
+                                                <img class="hidden" draggable="false" src="{{ game.game_image_3.url }}" alt="{{ game.game_title }}">
                                             </a>
                                             {% endif %}
                                             {% if game.game_image_4 %}
                                             <a href="{{ game.game_image_4.url }}" class="hidden">
-                                                <img class="hidden" draggable="false" src="{{ game.game_image_4.url }}">
+                                                <img class="hidden" draggable="false" src="{{ game.game_image_4.url }}" alt="{{ game.game_title }}">
                                             </a>
                                             {% endif %}
                                             {% if game.game_image_5 %}
                                             <a href="{{ game.game_image_5.url }}" class="hidden">
-                                                <img class="hidden" draggable="false" src="{{ game.game_image_5.url }}">
+                                                <img class="hidden" draggable="false" src="{{ game.game_image_5.url }}" alt="{{ game.game_title }}">
                                             </a>
                                             {% endif %}
                                         </div>
@@ -135,7 +135,7 @@
                         <div class="image-container">
                             {% if "placeholder" in post.featured_image.url %}
                             <img class="card-img-top" draggable="false" src="{% static 'img/feedandbreed/feed_breed_fox_card.jpg' %}"
-                                alt="placeholder image">
+                                alt="placeholder blog image">
                             {% else %}
                             <img class="card-img-top" draggable="false" src=" {{ post.featured_image.url }}" alt="{{ post.title }}">
                             {% endif %}
@@ -179,7 +179,7 @@
                         <div class="photo">
                             <a href="#">      
                                 {% if "placeholder" in team.profile_image.url %}
-                                <img src="{% static 'img/avatar/avatar-12.jpg' %}" class="img-fluid"  draggable="false" alt="placeholder image">
+                                <img src="{% static 'img/logos/logo.jpg' %}" class="img-fluid"  draggable="false" alt="placeholder team image">
                                 {% else %}
                                 <img src="{{ team.profile_image.url }}" class=" img-fluid" draggable="false" alt="{{ team.position }}">
                                 {% endif %}
