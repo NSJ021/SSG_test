@@ -56,9 +56,10 @@
         <!-- The post content goes inside the card-text. -->
         <!-- Use the | safe filter inside the template tags -->
         <article class="card-text">
-          <p>{{ game.game_brief | safe }}</p>
+          <h3>Game Details:</h3>
+          {{ game.game_brief | safe }}
 
-          <p>{{ game.description | safe }}</p>
+          {{ game.description | safe }}
 
           <p>
             <i class="fa-solid fa-user-plus"></i> Players : {{ game.players }}
