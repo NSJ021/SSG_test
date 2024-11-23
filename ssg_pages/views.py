@@ -10,9 +10,10 @@ Views:
 """
 
 from django.shortcuts import render
-from .models import Team
 from ssg_blog.models import Post, Comment
 from ssg_games.models import Game
+from .models import Team
+
 
 # Create your views here.
 
@@ -40,9 +41,8 @@ def home(request):
     post = Post.objects.all()
     comment = Comment.objects.all()
     game = Game.objects.all()
-    
     # Render the home page template with the fetched data
-    return render(request, 'ssg_pages/home.html', 
+    return render(request, 'ssg_pages/home.html',
         {
             'team': team,
             'posts': post,
@@ -66,14 +66,12 @@ def games(request):
     """
     # Fetch all games from the database
     game = Game.objects.all()
-    
     # Render the games page template with the fetched data
     return render(request, 'ssg_games/games.html',
         {
             'games': game
         },
     )
-                  
 def about(request):
     """
     Renders the about page with team members.
@@ -89,14 +87,12 @@ def about(request):
     """
     # Fetch all team members from the database
     team = Team.objects.all()
-    
     # Render the about page template with the fetched data
-    return render(request, 'ssg_pages/about.html', 
+    return render(request, 'ssg_pages/about.html',
         {
             'team': team,  
         },
     )
-    
 def blog(request):
     """
     Renders the blog page with posts and comments.
@@ -115,7 +111,6 @@ def blog(request):
     # Fetch all blog posts and comments from the database
     post = Post.objects.all()
     comment = Comment.objects.all()
-    
     # Render the blog page template with the fetched data
     return render(
         request, 'ssg_blog/blog.html',

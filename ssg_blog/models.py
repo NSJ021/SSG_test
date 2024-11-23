@@ -48,9 +48,13 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     is_featured = models.BooleanField(default=False)
+    objects = models.Manager()
 
     # Meta class and assigning string names to Post objects
     class Meta:
+        """
+        Orders the blog posts by creation date in descending order.
+        """
         ordering = ["-created_on"]
 
     def __str__(self):
@@ -63,7 +67,8 @@ class Comment(models.Model):
     Stores a single comment entry, related to :model:`blog.Post` and :model:`auth.User`.
 
     Attributes:
-        post (ForeignKey): The blog post that the comment is related to, related to :model:`blog.Post`.
+        post (ForeignKey): The blog post that the comment is related to, 
+        related to :model:`blog.Post`.
         author (ForeignKey): The author of the comment, related to :model:`auth.User`.
         body (TextField): The main content of the comment.
         approved (BooleanField): Indicates if the comment is approved.
@@ -79,10 +84,15 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+    objects = models.Manager()
 
     # Meta class and assigning string names to Post objects
     class Meta:
+        """
+        Orders the comments by creation date in descending order
+        """
         ordering = ["-created_on"]
 
     def __str__(self):
         return f"{self.body} by {self.author}"
+    

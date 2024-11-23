@@ -19,15 +19,16 @@ class Team(models.Model):
         position (CharField): The position of the team member.
         profile_image (CloudinaryField): The profile image of the team member.
         content (TextField): Additional content about the team member.
-        updated_on (DateTimeField): The date and time when the team member's information was last updated.
+        updated_on (DateTimeField): The date and time when the team member's 
+        information was last updated.
     """
-    
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     position = models.CharField(max_length=200)
     profile_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     updated_on = models.DateTimeField(auto_now=True)
-    
+    objects = models.Manager()
     def __str__(self):
-        return self.position
+        return f"{self.first_name} {self.last_name} - {self.position}"
+    

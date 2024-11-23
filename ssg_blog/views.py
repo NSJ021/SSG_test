@@ -56,7 +56,6 @@ def post_detail(request, slug):
     comment_count = post.comments.filter(approved=True).count()
 
     if request.method == "POST":
-        
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
@@ -69,7 +68,6 @@ def post_detail(request, slug):
             )
 
     comment_form = CommentForm()
-    
     return render(
         request,
         "ssg_blog/post_detail.html",
@@ -80,7 +78,6 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
-    
 def comment_edit(request, slug, comment_id):
     """
     Display an individual comment for editing.
@@ -127,8 +124,6 @@ def comment_delete(request, slug, comment_id):
        single comment related to the post
 
     """
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
     if comment.author == request.user:
@@ -137,4 +132,5 @@ def comment_delete(request, slug, comment_id):
     else:
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))  
+    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+ 

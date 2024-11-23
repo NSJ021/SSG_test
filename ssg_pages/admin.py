@@ -32,9 +32,19 @@ class TeamAdmin(SummernoteModelAdmin):
     - `list_display_links`:
         Specifies the fields that should be clickable links in the list view: position, thumbnail, first name, and last name.
     """
-    # Thumbnail function, to display user image in admin panel
-    def thumbnail(self, object):
-        return format_html('<img src="{}" width="50" style="border-radius:50px;" />'.format(object.profile_image.url))
+    
+
+    def thumbnail(self, team_member):
+        """
+        Generates an HTML img tag for the team member's profile image.
+
+        Args:
+            team_member (Team): The team member instance.
+
+        Returns:
+            str: An HTML img tag with the profile image URL.
+        """
+        return format_html(f'<img src="{team_member.profile_image.url}" width="50" style="border-radius:50px;" />')
     thumbnail.short_description = 'Image'
     
     # Admin Panel Display and Filter Options
@@ -42,4 +52,4 @@ class TeamAdmin(SummernoteModelAdmin):
     list_filter = ('position', 'updated_on')
     list_display_links = ('position','thumbnail', 'first_name', 'last_name',)
     search_fields = ('position', 'first_name', 'last_name',)
-    summernote_fields = ('content')
+    summernote_fields = ('content',)

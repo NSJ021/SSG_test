@@ -14,7 +14,7 @@ player_amount = (
     ('1+', '1+'),
     ('2+', '2+'),
     ('3+', '3+'),
-    ('4+', '4+'),  
+    ('4+', '4+'),
 )
 
 game_length = (
@@ -43,7 +43,6 @@ class Game(models.Model):
         description (TextField): A detailed description of the game.
         is_featured (BooleanField): Indicates if the game is featured.
     """
-    
     game_title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     creator = models.CharField(max_length=200)
@@ -57,19 +56,18 @@ class Game(models.Model):
     game_brief = models.TextField()
     description = models.TextField()
     is_featured = models.BooleanField(default=False)
+    objects = models.Manager()
 
     def __str__(self):
         return f"{self.game_title} | Created by {self.creator}"
-    
-    
-    
-    # Comment Model
+# Comment Model
 class Comment(models.Model):
     """
     Stores a single comment entry, related to :model:`blog.Post` and :model:`auth.User`.
 
     Attributes:
-        post (ForeignKey): The blog post that the comment is related to, related to :model:`blog.Post`.
+        post (ForeignKey): The blog post that the comment is related to, 
+        related to :model:`blog.Post`.
         author (ForeignKey): The author of the comment, related to :model:`auth.User`.
         body (TextField): The main content of the comment.
         approved (BooleanField): Indicates if the comment is approved.
@@ -85,9 +83,15 @@ class Comment(models.Model):
     body = models.TextField()
     approved = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
+    objects = models.Manager()
 
     # Meta class and assigning string names to Post objects
+
     class Meta:
+        """
+        Meta:
+        ordering: Orders the comments by creation date in descending order.
+        """
         ordering = ["-created_on"]
 
     def __str__(self):
