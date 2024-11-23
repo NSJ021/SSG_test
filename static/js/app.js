@@ -10,8 +10,8 @@ $(function () {
     // Magnify activation
     $(".portfolio-item").magnificPopup({
         delegate: "a",
-        type: "image",
-        gallery:{enabled:true}
+        gallery:{enabled:true},
+        type: "image"
     });
 
     $(".game-magnify-gallery").lightGallery();
@@ -21,18 +21,18 @@ $(function () {
             $(event.currentTarget).removeClass("active");
             $.jnoty("Game has been removed from compare list", {
                 header: "Warning",
+                icon: "fa fa-check-circle",
                 sticky: true,
-                theme: "jnoty-warning",
-                icon: "fa fa-check-circle"
+                theme: "jnoty-warning"
             });
 
         } else {
             $(event.currentTarget).addClass("active");
             $.jnoty("Game has been added to compare list", {
                 header: "Success",
+                icon: "fa fa-check-circle",
                 sticky: true,
-                theme: "jnoty-success",
-                icon: "fa fa-check-circle"
+                theme: "jnoty-success"
             });
         }
     });
@@ -42,18 +42,18 @@ $(function () {
             $(event.currentTarget).removeClass("active");
             $.jnoty("Game has been removed from wishlist list", {
                 header: "Warning",
+                icon: "fa fa-check-circle",
                 sticky: true,
-                theme: "jnoty-warning",
-                icon: "fa fa-check-circle"
+                theme: "jnoty-warning"
             });
 
         } else {
             $(event.currentTarget).addClass("active");
             $.jnoty("Game has been added to wishlist list", {
                 header: "Success",
+                icon: "fa fa-check-circle",
                 sticky: true,
-                theme: "jnoty-success",
-                icon: "fa fa-check-circle"
+                theme: "jnoty-success"
             });
         }
     });
@@ -84,15 +84,20 @@ $(function () {
                     $(".sticky-header").addClass("header-shrink");
                 }
                 if($(".do-sticky").length < 1) {
-                    $(".company-logo img").attr("src", "static/img/logos/logo.jpg");
+                    $(".company-logo img").attr(
+                        "src", "static/img/logos/logo.jpg");
                 }
             }
             else {
                 $(".sticky-header").removeClass("header-shrink");
-                if($(".do-sticky").length < 1 && $(".fixed-header").length == 0 && $(".fixed-header2").length == 0) {
-                    $(".company-logo img").attr("src", "static/img/logos/logo.jpg");
+                if($(".do-sticky").length < 1 && $(
+                    ".fixed-header").length == 0 && $(
+                        ".fixed-header2").length == 0) {
+                    $(".company-logo img").attr(
+                        "src", "static/img/logos/logo.jpg");
                 } else {
-                    $(".company-logo img").attr("src", "static/img/logos/logo.jpg");
+                    $(".company-logo img").attr(
+                        "src", "static/img/logos/logo.jpg");
                 }
             }
         } else {
@@ -120,66 +125,68 @@ $(function () {
 
     // Page scroller initialization.
     $.scrollUp({
-        scrollName: 'page_scroller',
-        scrollDistance: 300,
-        scrollFrom: 'top',
-        scrollSpeed: 500,
-        easingType: 'linear',
-        animation: 'fade',
-        animationSpeed: 200,
-        scrollTrigger: false,
-        scrollTarget: false,
-        scrollText: '<i class="fa fa-chevron-up"></i>',
-        scrollTitle: false,
-        scrollImg: false,
         activeOverlay: false,
+        animation: "fade",
+        animationSpeed: 200,
+        easingType: "linear",
+        scrollDistance: 300,
+        scrollFrom: "top",
+        scrollImg: false,
+        scrollName: "page_scroller",
+        scrollSpeed: 500,
+        scrollTarget: false,
+        scrollText: "<i class='fa fa-chevron-up'></i>",
+        scrollTitle: false,
+        scrollTrigger: false,
         zIndex: 2147483647
     });
 
     // Select picket
-    $('.selectpicker').selectpicker();
+    $(".selectpicker").selectpicker();
 
 
     // Carousel with partner initialization
     (function () {
-        $('#ourPartners').carousel({interval: 3600});
+        $("#ourPartners").carousel({interval: 3600});
     }());
 
-    $('.our-partners .item').each(function(index, element) {
+    $(".our-partners .item").each(function(index, element) {
         var itemToClone = $(element);
         for (var i = 1; i < 4; i++) {
             itemToClone = itemToClone.next();
             if (!itemToClone.length) {
-                itemToClone = $(this).siblings(':first');
+                itemToClone = $(this).siblings(":first");
             }
-            itemToClone.children(':first-child').clone()
+            itemToClone.children(":first-child").clone()
                 .addClass("cloneditem-" + (i))
                 .appendTo($(this));
         }
-    });
+    })
 
     // Slick Sliders
-    $('.slick-carousel').each(function () {
+    $(".slick-carousel").each(function () {
         var slider = $(this);
         $(this).slick({
             infinite: true,
             dots: false,
             arrows: false,
             centerMode: true,
-            centerPadding: '0'
+            centerPadding: "0"
         });
-        $(this).closest('.slick-slider-area').find('.slick-prev').on("click", function () {
-            slider.slick('slickPrev');
+        $(this).closest(".slick-slider-area").find(
+            ".slick-prev").on("click", function () {
+            slider.slick("slickPrev");
         });
-        $(this).closest('.slick-slider-area').find('.slick-next').on("click", function () {
-            slider.slick('slickNext');
+        $(this).closest(".slick-slider-area").find(
+            ".slick-next").on("click", function () {
+            slider.slick("slickNext");
         });
     });
 
     // Alert Time Out
     setTimeout(function () {
 
-        $('#message').fadeOut('slow');
+        $("#message").fadeOut("slow");
 
     }, 4000); // <-- time in milliseconds
 })(jQuery);
