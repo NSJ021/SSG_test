@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from django.contrib.auth.models import User
+from ssg_blog.models import Comment as BlogComment
+from ssg_games.models import Comment as GameComment
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -71,6 +74,14 @@ def logout(request):
         messages.success(request, 'You are now logged out')    
     return redirect('home')
 
-# Dashboard view
+@login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'ssg_accounts/dashboard.html')
+    # Get both types of comments
+    blog_comments = BlogComment.objects.filter(author=request.user).select_related('post')
+    game_comments = GameComment.objects.filter(author=request.user).select_related('game')
+    
+    context = {
+        'blog_comments': blog_comments,
+        'game_comments': game_comments,
+    }
+    return render(request, 'ssg_accounts/dashboard.html', context)

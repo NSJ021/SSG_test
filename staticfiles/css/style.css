@@ -577,6 +577,29 @@ input[type=checkbox]:checked + label:before {
     color: #fff;
 }
 
+.table thead th {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table .btn {
+    text-align: center;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .alert {
     text-transform: uppercase;
     font-size: 12px;
@@ -3637,6 +3660,10 @@ input[type=checkbox]:checked + label:before {
     margin-right: 5px;
 }
 
+.blog-3 .detail h3 a {
+    color: #212121;
+}
+
 .blog-3 .read-more{
     margin-bottom: 20px;
     display: block;
@@ -4213,24 +4240,6 @@ footer {
     position: absolute;
     top: 0;
     font-size: 15px;
-}
-
-.question .social-list li {
-    text-align: center;
-    display: inline-block;
-    list-style: none;
-}
-
-.question .social-list li a {
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 3px;
-    color: #fff;
-    margin: 0 4px 2px 0;
 }
 
 /** Agent experience start **/
@@ -5635,7 +5644,7 @@ footer {
     border-radius: 3px;
 }
 
-.contact-section .form-section .form-box .fa-user {
+.contact-section .form-section .fa-user {
     position: absolute;
     top: 15px;
     left: 20px;
@@ -6358,12 +6367,6 @@ footer {
 
 .heading-4 p{
     font-size: 16px;
-}
-
-.form-group label, .checkbox label {
-    font-weight: 400;
-    font-size: 14px;
-    color: #535353;
 }
 
 /** Dashboard nav start **/
@@ -8451,12 +8454,6 @@ table {
 
     .banner h4 {
         font-size: 42px;
-    }
-
-    .banner h5 {
-        font-size: 18px;
-        line-height: 30px;
-        margin-bottom: 20px;
     }
 
     .sb-2{

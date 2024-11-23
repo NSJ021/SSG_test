@@ -30,7 +30,7 @@
                         {% else %} 
                         class="nav-link"
                         {% endif %}
-                        class="nav-link" href="{% url 'games' %}">
+                        href="{% url 'games' %}">
                             Games
                         </a>
                     </li>
@@ -41,7 +41,7 @@
                         {% else %} 
                         class="nav-link"
                         {% endif %} 
-                        class="nav-link" href="{% url 'about' %}">
+                        href="{% url 'about' %}">
                             About
                         </a>
                     </li>
@@ -52,7 +52,7 @@
                         {% else %} 
                         class="nav-link"
                         {% endif %}
-                        class="nav-link" href="{% url 'blog' %}">
+                        href="{% url 'blog' %}">
                             Blog
                         </a>
                     </li>
@@ -63,7 +63,7 @@
                         {% else %} 
                         class="nav-link"
                         {% endif %}
-                        class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        href="{% url 'contact' %}">Contact</a>
                     </li>
                     {% comment %} Checking if user is logged in {% endcomment %}
                     {% if user.is_authenticated %}
@@ -85,7 +85,7 @@
                         {% else %} 
                         class="nav-link"
                         {% endif %} 
-                        class="nav-link" href="{% url 'login' %}" class="sign-in nav-link"><i class="fa fa-sign-in"></i> Login</a>
+                        href="{% url 'login' %}" class="sign-in nav-link"><i class="fa fa-sign-in"></i> Login</a>
                     </li>
                     <li class='nav-item'>
                         <a                        
@@ -94,7 +94,7 @@
                         {% else %} 
                         class="nav-link"
                         {% endif %} 
-                        class="nav-link" href="{% url 'signup' %}" class="sign-in nav-link"><i class="fa fa-user"></i> Register</a>
+                        href="{% url 'signup' %}" class="sign-in nav-link"><i class="fa fa-user"></i> Register</a>
                     </li>
                     {% endif %}
                 </ul>

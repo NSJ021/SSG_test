@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
-
 {% block title %} | Dashboard {% endblock %}
-
 {% block content %}
 {% load static %}
 
@@ -19,36 +17,72 @@
 </div>
 <!-- Banner end -->
 
-<!--   Dashboard Start   -->
-
 <div class="container mt-50 mb-50">
-	{% include 'includes/messages.html' %}
-	<div class="main-title" style="text-align:left !important;">
-            <h1>Welcome <span>User</span></h1>
-            <p>Here are the cars that you have inquired about</p>
-        </div>
-	<table class="table table-hover">
-	  <thead>
-		<tr>
-		  <th scope="col">#</th>
-		  <th scope="col">Car Name</th>
-		  <th scope="col">Location</th>
-		  <th scope="col">Price</th>
-		  <th scope="col">Action</th>
-		</tr>
-	  </thead>
-	  <tbody>
-		<tr>
-		  <th scope="row">1</th>
-		  <td>Lamborgini Huracan</td>
-		  <td>Austin</td>
-		  <td>$25000</td>
-		  <td><a href="#" class="btn btn-outline-dark">View Car</a></td>
-		</tr>
-	  </tbody>
-	</table>
-</div>
+    {% include 'includes/messages.html' %}
 
-<!--   Dashboard End   -->
-    
+    <div class="main-title" style="text-align:left !important;">
+        <h1>Welcome <span>{{ request.user.username }}</span></h1>
+        <p>Check out your recent activity on the ScatterShot Games</p>
+    </div>
+
+    <!-- Blog Comments Section -->
+    <div class="table-responsive">
+        <h2>Your <span>Blog</span> Comments</h2>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Post Title</th>
+                    <th>Comment</th>
+                    <th>Created On</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comment in blog_comments %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ comment.post.title }}</td>
+                    <td>{{ comment.body }}</td>
+                    <td>{{ comment.created_on }}</td>
+                    <td>
+                        <a href="{% url 'post_detail' comment.post.slug %}#comment-{{ comment.id }}" 
+                           class="btn btn-primary btn-sm">View</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Game Comments Section -->
+    <div class="table-responsive mt-4">
+        <h2>Your <span>Game</span> Comments</h2>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Game Title</th>
+                    <th>Comment</th>
+                    <th>Created On</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comment in game_comments %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ comment.game.game_title }}</td>
+                    <td>{{ comment.body }}</td>
+                    <td>{{ comment.created_on }}</td>
+                    <td>
+                        <a href="{% url 'game_detail' comment.game.slug %}#comment-{{ comment.id }}"
+                           class="btn btn-primary btn-sm">View</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock %}
